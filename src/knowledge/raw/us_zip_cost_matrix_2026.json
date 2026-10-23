@@ -1,0 +1,2305 @@
+{
+  "dataset": "us_zip_cost_matrix_2026",
+  "version": "1.0.0",
+  "generated_at": "2026-10-23T20:52:35+08:00",
+  "national_baseline_notes": "National baseline = 1.0 for cost_indices. Labor anchors: BLS OEWS May 2025 mean hourly wages (SOC 47-2111 Electricians, 49-9021 HVAC, 47-2152 Plumbers, 47-2181 Roofers, 49-2098 Electronic Equipment Installers as low-voltage proxy). Burdened shop rates ≈ BLS mean × 2.10–2.35 (fringes, WC, truck, overhead). ENR July 13 2026 20-city avg BCI = 8962.81; city BCI/avg clamped to 0.85–1.45 for residential remodel (raw ENR Dallas/Atlanta BCI ratios were <0.85). Permit USD = city permit fees only (not soft costs).",
+  "methodology": "Batch 1 Top-30 MSAs for Quote Shield AI. (1) Labor: BLS Public API v2 OEWS May 2025 mean/median/p10/p90 per MSA CBSA; Bay Area = 60% San Francisco-Oakland + 40% San Jose blend. (2) Regional burden multipliers 2.10 (Sun Belt) – 2.35 (high-cost coastal). (3) Cost indices: ENR city BCI / 20-city avg when published (Jul 2026 PDF), else electrician wage-ratio proxy; material from ENR Materials Index or wage proxy; permit multiplier from electrical-panel fee mid / $108 national reference; all clamped 0.85–1.45. (4) Permits: BuildPermitGuide Oct 2026 research pages + PermitCalculator CSVs; E4 when primary city schedule not fetched. (5) ZIP3 = primary USPS 3-digit prefixes for MSA core. (6) Incentives = brief DSIRE / IRA HEAR / utility pointers — verify live before quoting.",
+  "metros": [
+    {
+      "metro_id": "msa_los_angeles_ca",
+      "metro_name": "Los Angeles-Long Beach-Anaheim, CA",
+      "state": "CA",
+      "primary_zip3_prefixes": [
+        "900",
+        "902",
+        "906",
+        "907",
+        "908",
+        "910",
+        "911",
+        "912",
+        "913",
+        "914",
+        "915",
+        "916",
+        "917",
+        "918",
+        "926",
+        "928"
+      ],
+      "representative_zips": [
+        "90012",
+        "90210",
+        "92618"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 89,
+          "high": 134
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 81,
+          "high": 118
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 87,
+          "high": 130
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 53,
+          "mid": 72,
+          "high": 97
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 77,
+          "high": 107
+        },
+        "burden_multiplier_vs_bls_wage": 2.25,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.25 burden. Electrician mean $39.57/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.06,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          108,
+          206
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          66,
+          180
+        ],
+        "plumbing_water_heater_typical_usd": [
+          80,
+          150
+        ],
+        "roofing_reroof_typical_usd": [
+          200,
+          470
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "CA CEC IRA HEAR/HEEHRA heat-pump rebates (single-family often waitlisted 2026); TECH Clean CA / utility SGIP & HPWH rebates; check DSIRE + local IOU.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.25 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_san_francisco_bay_ca",
+      "metro_name": "San Francisco-Oakland-Berkeley / San Jose-Sunnyvale, CA",
+      "state": "CA",
+      "primary_zip3_prefixes": [
+        "940",
+        "941",
+        "943",
+        "944",
+        "945",
+        "946",
+        "947",
+        "948",
+        "949",
+        "950",
+        "951"
+      ],
+      "representative_zips": [
+        "94105",
+        "94612",
+        "95113"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 62,
+          "mid": 115,
+          "high": 172
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 59,
+          "mid": 100,
+          "high": 149
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 61,
+          "mid": 114,
+          "high": 171
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 66,
+          "mid": 85,
+          "high": 113
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 61,
+          "mid": 94,
+          "high": 133
+        },
+        "burden_multiplier_vs_bls_wage": 2.35,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.35 burden. Electrician mean $49.07/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.28,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.29,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          450,
+          709
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          290,
+          595
+        ],
+        "plumbing_water_heater_typical_usd": [
+          198,
+          290
+        ],
+        "roofing_reroof_typical_usd": [
+          320,
+          714
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "CA CEC IRA HEAR/HEEHRA heat-pump rebates (single-family often waitlisted 2026); TECH Clean CA / utility SGIP & HPWH rebates; check DSIRE + local IOU.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.35 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_san_diego_ca",
+      "metro_name": "San Diego-Chula Vista-Carlsbad, CA",
+      "state": "CA",
+      "primary_zip3_prefixes": [
+        "919",
+        "920",
+        "921"
+      ],
+      "representative_zips": [
+        "92101",
+        "92037",
+        "91910"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 52,
+          "mid": 89,
+          "high": 134
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 82,
+          "high": 123
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 85,
+          "high": 128
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 52,
+          "mid": 71,
+          "high": 82
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 77,
+          "high": 102
+        },
+        "burden_multiplier_vs_bls_wage": 2.25,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.25 burden. Electrician mean $39.54/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.01,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.04,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          177,
+          353
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          132,
+          308
+        ],
+        "plumbing_water_heater_typical_usd": [
+          100,
+          160
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          400
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "CA CEC IRA HEAR/HEEHRA heat-pump rebates (single-family often waitlisted 2026); TECH Clean CA / utility SGIP & HPWH rebates; check DSIRE + local IOU.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.25 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_sacramento_ca",
+      "metro_name": "Sacramento-Roseville-Folsom, CA",
+      "state": "CA",
+      "primary_zip3_prefixes": [
+        "956",
+        "957",
+        "958"
+      ],
+      "representative_zips": [
+        "95814",
+        "95630",
+        "95758"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 86,
+          "high": 129
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 78,
+          "high": 110
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 83,
+          "high": 124
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 53,
+          "mid": 72,
+          "high": 96
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 52,
+          "mid": 77,
+          "high": 102
+        },
+        "burden_multiplier_vs_bls_wage": 2.25,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.25 burden. Electrician mean $38.40/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.01,
+        "permit_fee_multiplier_vs_national": 1.32,
+        "overall_install_cost_index": 1.03,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          125,
+          160
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          175,
+          254
+        ],
+        "plumbing_water_heater_typical_usd": [
+          70,
+          120
+        ],
+        "roofing_reroof_typical_usd": [
+          175,
+          280
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "CA CEC IRA HEAR/HEEHRA heat-pump rebates (single-family often waitlisted 2026); TECH Clean CA / utility SGIP & HPWH rebates; check DSIRE + local IOU.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.25 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_seattle_wa",
+      "metro_name": "Seattle-Tacoma-Bellevue, WA",
+      "state": "WA",
+      "primary_zip3_prefixes": [
+        "980",
+        "981",
+        "982",
+        "983",
+        "984"
+      ],
+      "representative_zips": [
+        "98101",
+        "98004",
+        "98402"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 63,
+          "mid": 113,
+          "high": 170
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 58,
+          "mid": 97,
+          "high": 146
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 59,
+          "mid": 109,
+          "high": 164
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 55,
+          "mid": 83,
+          "high": 118
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 59,
+          "mid": 86,
+          "high": 116
+        },
+        "burden_multiplier_vs_bls_wage": 2.35,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.35 burden. Electrician mean $47.94/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.03,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.07,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          365,
+          442
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          63,
+          400
+        ],
+        "plumbing_water_heater_typical_usd": [
+          120,
+          200
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          900
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "WA IRA HEAR/HOMES approved but rollout lagged 2026; utility heat-pump rebates (SCL/PSE); federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.35 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_portland_or",
+      "metro_name": "Portland-Vancouver-Hillsboro, OR-WA",
+      "state": "OR",
+      "primary_zip3_prefixes": [
+        "970",
+        "971",
+        "972",
+        "986"
+      ],
+      "representative_zips": [
+        "97201",
+        "97035",
+        "98660"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 68,
+          "mid": 116,
+          "high": 152
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 55,
+          "mid": 82,
+          "high": 112
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 65,
+          "mid": 114,
+          "high": 166
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 55,
+          "mid": 76,
+          "high": 109
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 56,
+          "mid": 87,
+          "high": 114
+        },
+        "burden_multiplier_vs_bls_wage": 2.35,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.35 burden. Electrician mean $49.53/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.03,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.13,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          237,
+          334
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          187,
+          382
+        ],
+        "plumbing_water_heater_typical_usd": [
+          55,
+          100
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          880
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "Energy Trust of Oregon heat-pump & HPWH incentives; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.35 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_phoenix_az",
+      "metro_name": "Phoenix-Mesa-Chandler, AZ",
+      "state": "AZ",
+      "primary_zip3_prefixes": [
+        "850",
+        "851",
+        "852",
+        "853"
+      ],
+      "representative_zips": [
+        "85003",
+        "85251",
+        "85308"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 47,
+          "mid": 65,
+          "high": 88
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 63,
+          "high": 84
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 47,
+          "mid": 71,
+          "high": 102
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 52,
+          "high": 63
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 62,
+          "high": 83
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $30.95/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.97,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          207,
+          231
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          0,
+          243
+        ],
+        "plumbing_water_heater_typical_usd": [
+          100,
+          200
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          300
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "Utility DSM rebates (APS/SRP); federal 25C; limited state HEAR activity; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_las_vegas_nv",
+      "metro_name": "Las Vegas-Henderson-Paradise, NV",
+      "state": "NV",
+      "primary_zip3_prefixes": [
+        "889",
+        "890",
+        "891"
+      ],
+      "representative_zips": [
+        "89101",
+        "89014",
+        "89147"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 46,
+          "mid": 76,
+          "high": 114
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 63,
+          "high": 90
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 71,
+          "high": 106
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 56,
+          "high": 79
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 66,
+          "high": 92
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $36.16/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.0,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.01,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          200,
+          320
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          80,
+          250
+        ],
+        "plumbing_water_heater_typical_usd": [
+          60,
+          110
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          350
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "NV Energy EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_denver_co",
+      "metro_name": "Denver-Aurora-Centennial, CO",
+      "state": "CO",
+      "primary_zip3_prefixes": [
+        "800",
+        "801",
+        "802",
+        "804"
+      ],
+      "representative_zips": [
+        "80202",
+        "80014",
+        "80401"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 49,
+          "mid": 72,
+          "high": 100
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 52,
+          "mid": 79,
+          "high": 111
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 76,
+          "high": 109
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 61,
+          "high": 81
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 72,
+          "high": 106
+        },
+        "burden_multiplier_vs_bls_wage": 2.2,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.2 burden. Electrician mean $32.50/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.95,
+        "permit_fee_multiplier_vs_national": 0.89,
+        "overall_install_cost_index": 0.88,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          43,
+          150
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          50,
+          200
+        ],
+        "plumbing_water_heater_typical_usd": [
+          35,
+          90
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          350
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "Xcel Energy heat-pump rebates; CO state electrification programs; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.2 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E4"
+    },
+    {
+      "metro_id": "msa_salt_lake_city_ut",
+      "metro_name": "Salt Lake City-West Valley City, UT",
+      "state": "UT",
+      "primary_zip3_prefixes": [
+        "840",
+        "841",
+        "844"
+      ],
+      "representative_zips": [
+        "84101",
+        "84047",
+        "84095"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 67,
+          "high": 89
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 63,
+          "high": 84
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 48,
+          "mid": 68,
+          "high": 89
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 53,
+          "high": 73
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 62,
+          "high": 79
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $32.03/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.06,
+        "overall_install_cost_index": 0.98,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          80,
+          150
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          60,
+          180
+        ],
+        "plumbing_water_heater_typical_usd": [
+          55,
+          100
+        ],
+        "roofing_reroof_typical_usd": [
+          80,
+          300
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "Rocky Mountain Power rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_dallas_fort_worth_tx",
+      "metro_name": "Dallas-Fort Worth-Arlington, TX",
+      "state": "TX",
+      "primary_zip3_prefixes": [
+        "750",
+        "751",
+        "752",
+        "760",
+        "761",
+        "762"
+      ],
+      "representative_zips": [
+        "75201",
+        "76102",
+        "75024"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 82
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 62,
+          "high": 86
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 63,
+          "high": 83
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 50,
+          "high": 65
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 57,
+          "high": 78
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $28.83/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.97,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.85,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          73,
+          321
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          0,
+          321
+        ],
+        "plumbing_water_heater_typical_usd": [
+          50,
+          120
+        ],
+        "roofing_reroof_typical_usd": [
+          170,
+          340
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "No statewide IRA HEAR launch as of mid-2026 (pending); utility EE rebates (Oncor/CenterPoint/Austin Energy) and federal 25C tax credit; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_houston_tx",
+      "metro_name": "Houston-Pasadena-The Woodlands, TX",
+      "state": "TX",
+      "primary_zip3_prefixes": [
+        "770",
+        "772",
+        "773",
+        "774",
+        "775"
+      ],
+      "representative_zips": [
+        "77002",
+        "77494",
+        "77573"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 62,
+          "high": 85
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 84
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 64,
+          "high": 86
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 47,
+          "high": 60
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 55,
+          "high": 77
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $29.55/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.96,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          125,
+          200
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          100,
+          200
+        ],
+        "plumbing_water_heater_typical_usd": [
+          90,
+          160
+        ],
+        "roofing_reroof_typical_usd": [
+          120,
+          250
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "No statewide IRA HEAR launch as of mid-2026 (pending); utility EE rebates (Oncor/CenterPoint/Austin Energy) and federal 25C tax credit; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_austin_tx",
+      "metro_name": "Austin-Round Rock-San Marcos, TX",
+      "state": "TX",
+      "primary_zip3_prefixes": [
+        "786",
+        "787",
+        "765"
+      ],
+      "representative_zips": [
+        "78701",
+        "78613",
+        "78745"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 80
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 65,
+          "high": 93
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 64,
+          "high": 82
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 51,
+          "high": 70
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 60,
+          "high": 79
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $29.25/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.95,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          220,
+          387
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          67,
+          308
+        ],
+        "plumbing_water_heater_typical_usd": [
+          50,
+          100
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          300
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "No statewide IRA HEAR launch as of mid-2026 (pending); utility EE rebates (Oncor/CenterPoint/Austin Energy) and federal 25C tax credit; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_san_antonio_tx",
+      "metro_name": "San Antonio-New Braunfels, TX",
+      "state": "TX",
+      "primary_zip3_prefixes": [
+        "780",
+        "781",
+        "782"
+      ],
+      "representative_zips": [
+        "78205",
+        "78015",
+        "78258"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 76
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 60,
+          "high": 83
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 79
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 46,
+          "high": 62
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 56,
+          "high": 75
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $27.42/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.98,
+        "permit_fee_multiplier_vs_national": 0.85,
+        "overall_install_cost_index": 0.94,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          69,
+          110
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          72,
+          164
+        ],
+        "plumbing_water_heater_typical_usd": [
+          50,
+          90
+        ],
+        "roofing_reroof_typical_usd": [
+          31,
+          80
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "No statewide IRA HEAR launch as of mid-2026 (pending); utility EE rebates (Oncor/CenterPoint/Austin Energy) and federal 25C tax credit; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_miami_fl",
+      "metro_name": "Miami-Fort Lauderdale-West Palm Beach, FL",
+      "state": "FL",
+      "primary_zip3_prefixes": [
+        "330",
+        "331",
+        "333",
+        "334"
+      ],
+      "representative_zips": [
+        "33130",
+        "33301",
+        "33401"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 82
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 81
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 76
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 49,
+          "high": 64
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 77
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $28.81/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.95,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          115,
+          220
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          100,
+          200
+        ],
+        "plumbing_water_heater_typical_usd": [
+          90,
+          150
+        ],
+        "roofing_reroof_typical_usd": [
+          110,
+          280
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "No statewide IRA HEAR; utility HVAC rebates vary (FPL/TECO); federal 25C; Miami SAVE pilot discounted green HVAC permits through early 2027.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_orlando_fl",
+      "metro_name": "Orlando-Kissimmee-Sanford, FL",
+      "state": "FL",
+      "primary_zip3_prefixes": [
+        "327",
+        "328",
+        "347"
+      ],
+      "representative_zips": [
+        "32801",
+        "32789",
+        "34787"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 56,
+          "high": 75
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 57,
+          "high": 79
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 57,
+          "high": 74
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 50,
+          "high": 64
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 75
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $26.59/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.98,
+        "permit_fee_multiplier_vs_national": 1.11,
+        "overall_install_cost_index": 0.93,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          80,
+          160
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          80,
+          200
+        ],
+        "plumbing_water_heater_typical_usd": [
+          60,
+          110
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          280
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "No statewide IRA HEAR; utility HVAC rebates vary (FPL/TECO); federal 25C; Miami SAVE pilot discounted green HVAC permits through early 2027.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_tampa_fl",
+      "metro_name": "Tampa-St. Petersburg-Clearwater, FL",
+      "state": "FL",
+      "primary_zip3_prefixes": [
+        "335",
+        "336",
+        "337",
+        "346"
+      ],
+      "representative_zips": [
+        "33602",
+        "33701",
+        "34698"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 77
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 56,
+          "high": 76
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 56,
+          "high": 67
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 49,
+          "high": 64
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 79
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $27.89/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.98,
+        "permit_fee_multiplier_vs_national": 1.25,
+        "overall_install_cost_index": 0.94,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          90,
+          180
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          80,
+          200
+        ],
+        "plumbing_water_heater_typical_usd": [
+          90,
+          150
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          280
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "No statewide IRA HEAR; utility HVAC rebates vary (FPL/TECO); federal 25C; Miami SAVE pilot discounted green HVAC permits through early 2027.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_atlanta_ga",
+      "metro_name": "Atlanta-Sandy Springs-Roswell, GA",
+      "state": "GA",
+      "primary_zip3_prefixes": [
+        "300",
+        "301",
+        "302",
+        "303",
+        "311"
+      ],
+      "representative_zips": [
+        "30303",
+        "30024",
+        "30144"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 63,
+          "high": 85
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 84
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 82
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 50,
+          "high": 65
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 77
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $29.82/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.08,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.85,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          120,
+          250
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          100,
+          250
+        ],
+        "plumbing_water_heater_typical_usd": [
+          55,
+          110
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          350
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "Georgia Power EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E4"
+    },
+    {
+      "metro_id": "msa_charlotte_nc",
+      "metro_name": "Charlotte-Concord-Gastonia, NC-SC",
+      "state": "NC",
+      "primary_zip3_prefixes": [
+        "280",
+        "281",
+        "282"
+      ],
+      "representative_zips": [
+        "28202",
+        "28078",
+        "28105"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 60,
+          "high": 77
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 80
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 77
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 52,
+          "high": 62
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 60,
+          "high": 77
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $28.41/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 0.9,
+        "overall_install_cost_index": 0.95,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          75,
+          120
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          90,
+          224
+        ],
+        "plumbing_water_heater_typical_usd": [
+          50,
+          120
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          256
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "Duke Energy EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_raleigh_nc",
+      "metro_name": "Raleigh-Cary / Durham-Chapel Hill, NC",
+      "state": "NC",
+      "primary_zip3_prefixes": [
+        "275",
+        "276",
+        "277"
+      ],
+      "representative_zips": [
+        "27601",
+        "27513",
+        "27701"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 46,
+          "mid": 58,
+          "high": 74
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 79
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 61,
+          "high": 78
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 52,
+          "high": 61
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 77
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $27.44/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.98,
+        "permit_fee_multiplier_vs_national": 1.25,
+        "overall_install_cost_index": 0.94,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          90,
+          180
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          80,
+          200
+        ],
+        "plumbing_water_heater_typical_usd": [
+          50,
+          120
+        ],
+        "roofing_reroof_typical_usd": [
+          80,
+          300
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "Duke Energy EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_new_york_ny",
+      "metro_name": "New York-Newark-Jersey City, NY-NJ-PA",
+      "state": "NY",
+      "primary_zip3_prefixes": [
+        "100",
+        "101",
+        "103",
+        "104",
+        "110",
+        "111",
+        "112",
+        "113",
+        "114",
+        "115",
+        "116",
+        "070",
+        "071",
+        "072",
+        "073",
+        "074",
+        "075",
+        "076",
+        "077",
+        "088",
+        "089"
+      ],
+      "representative_zips": [
+        "10001",
+        "11201",
+        "07302"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 52,
+          "mid": 100,
+          "high": 149
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 57,
+          "mid": 90,
+          "high": 123
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 54,
+          "mid": 103,
+          "high": 154
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 54,
+          "mid": 87,
+          "high": 118
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 49,
+          "mid": 71,
+          "high": 99
+        },
+        "burden_multiplier_vs_bls_wage": 2.35,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.35 burden. Electrician mean $42.63/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.09,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.44,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          130,
+          250
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          0,
+          160
+        ],
+        "plumbing_water_heater_typical_usd": [
+          100,
+          180
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          280
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "NYS Clean Heat / NYSERDA heat-pump incentives primary; limited IRA HEAR; Con Edison/National Grid rebates; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.35 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_boston_ma",
+      "metro_name": "Boston-Cambridge-Newton, MA-NH",
+      "state": "MA",
+      "primary_zip3_prefixes": [
+        "021",
+        "022",
+        "018",
+        "019",
+        "020",
+        "024"
+      ],
+      "representative_zips": [
+        "02108",
+        "02139",
+        "02446"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 53,
+          "mid": 94,
+          "high": 141
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 57,
+          "mid": 90,
+          "high": 116
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 59,
+          "mid": 105,
+          "high": 158
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 61,
+          "mid": 79,
+          "high": 109
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 55,
+          "mid": 89,
+          "high": 117
+        },
+        "burden_multiplier_vs_bls_wage": 2.35,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.35 burden. Electrician mean $40.08/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.95,
+        "permit_fee_multiplier_vs_national": 1.25,
+        "overall_install_cost_index": 1.2,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          70,
+          200
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          80,
+          250
+        ],
+        "plumbing_water_heater_typical_usd": [
+          40,
+          100
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          400
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "Mass Save heat-pump & weatherization incentives (strong); federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.35 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E4"
+    },
+    {
+      "metro_id": "msa_philadelphia_pa",
+      "metro_name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+      "state": "PA",
+      "primary_zip3_prefixes": [
+        "190",
+        "191",
+        "080",
+        "081",
+        "198"
+      ],
+      "representative_zips": [
+        "19103",
+        "08002",
+        "19801"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 86,
+          "high": 129
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 48,
+          "mid": 73,
+          "high": 107
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 88,
+          "high": 132
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 64,
+          "high": 92
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 66,
+          "high": 87
+        },
+        "burden_multiplier_vs_bls_wage": 2.2,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.2 burden. Electrician mean $39.29/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.05,
+        "permit_fee_multiplier_vs_national": 1.02,
+        "overall_install_cost_index": 1.16,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          71,
+          150
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          77,
+          267
+        ],
+        "plumbing_water_heater_typical_usd": [
+          35,
+          90
+        ],
+        "roofing_reroof_typical_usd": [
+          70,
+          200
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "Utility Act 129 rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.2 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_washington_dc",
+      "metro_name": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+      "state": "DC",
+      "primary_zip3_prefixes": [
+        "200",
+        "201",
+        "202",
+        "203",
+        "204",
+        "205",
+        "207",
+        "208",
+        "209",
+        "220",
+        "221",
+        "222",
+        "223"
+      ],
+      "representative_zips": [
+        "20001",
+        "22201",
+        "20814"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 47,
+          "mid": 84,
+          "high": 126
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 78,
+          "high": 111
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 79,
+          "high": 118
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 65,
+          "high": 84
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 74,
+          "high": 100
+        },
+        "burden_multiplier_vs_bls_wage": 2.2,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.2 burden. Electrician mean $38.29/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.01,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 1.03,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          100,
+          280
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          100,
+          300
+        ],
+        "plumbing_water_heater_typical_usd": [
+          70,
+          180
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          400
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "DCSEU rebates; MD EmPOWER / VA utility programs in suburbs; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.2 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_chicago_il",
+      "metro_name": "Chicago-Naperville-Elgin, IL-IN-WI",
+      "state": "IL",
+      "primary_zip3_prefixes": [
+        "600",
+        "601",
+        "602",
+        "603",
+        "604",
+        "605",
+        "606",
+        "607",
+        "608"
+      ],
+      "representative_zips": [
+        "60601",
+        "60045",
+        "60453"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 56,
+          "mid": 107,
+          "high": 140
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 54,
+          "mid": 90,
+          "high": 133
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 61,
+          "mid": 109,
+          "high": 144
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 55,
+          "mid": 92,
+          "high": 121
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 46,
+          "mid": 71,
+          "high": 90
+        },
+        "burden_multiplier_vs_bls_wage": 2.35,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.35 burden. Electrician mean $45.41/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.92,
+        "permit_fee_multiplier_vs_national": 1.39,
+        "overall_install_cost_index": 1.24,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          75,
+          225
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          0,
+          300
+        ],
+        "plumbing_water_heater_typical_usd": [
+          60,
+          150
+        ],
+        "roofing_reroof_typical_usd": [
+          0,
+          450
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "ComEd/Peoples Gas EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.35 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_minneapolis_mn",
+      "metro_name": "Minneapolis-St. Paul-Bloomington, MN-WI",
+      "state": "MN",
+      "primary_zip3_prefixes": [
+        "550",
+        "551",
+        "553",
+        "554"
+      ],
+      "representative_zips": [
+        "55401",
+        "55102",
+        "55344"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 52,
+          "mid": 89,
+          "high": 130
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 81,
+          "high": 106
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 54,
+          "mid": 97,
+          "high": 129
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 49,
+          "mid": 80,
+          "high": 105
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 75,
+          "high": 109
+        },
+        "burden_multiplier_vs_bls_wage": 2.2,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.2 burden. Electrician mean $40.31/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.98,
+        "permit_fee_multiplier_vs_national": 1.02,
+        "overall_install_cost_index": 1.1,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          81,
+          140
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          85,
+          218
+        ],
+        "plumbing_water_heater_typical_usd": [
+          65,
+          120
+        ],
+        "roofing_reroof_typical_usd": [
+          150,
+          485
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "Xcel/CenterPoint Conservation Improvement; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.2 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E1"
+    },
+    {
+      "metro_id": "msa_detroit_mi",
+      "metro_name": "Detroit-Warren-Dearborn, MI",
+      "state": "MI",
+      "primary_zip3_prefixes": [
+        "480",
+        "481",
+        "482",
+        "483"
+      ],
+      "representative_zips": [
+        "48226",
+        "48009",
+        "48104"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 49,
+          "mid": 84,
+          "high": 114
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 71,
+          "high": 101
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 86,
+          "high": 114
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 51,
+          "mid": 70,
+          "high": 85
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 57,
+          "high": 73
+        },
+        "burden_multiplier_vs_bls_wage": 2.2,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.2 burden. Electrician mean $38.10/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.88,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.93,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          120,
+          250
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          100,
+          250
+        ],
+        "plumbing_water_heater_typical_usd": [
+          90,
+          160
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          350
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "DTE/Consumers Energy EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.2 burden); Cost indices E4 ENR BCI Jul 2026 (clamped 0.85–1.45); Permits E4"
+    },
+    {
+      "metro_id": "msa_nashville_tn",
+      "metro_name": "Nashville-Davidson-Murfreesboro-Franklin, TN",
+      "state": "TN",
+      "primary_zip3_prefixes": [
+        "370",
+        "371",
+        "372"
+      ],
+      "representative_zips": [
+        "37203",
+        "37027",
+        "37129"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 46,
+          "mid": 67,
+          "high": 94
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 47,
+          "mid": 62,
+          "high": 92
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 64,
+          "high": 84
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 52,
+          "high": 78
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 84
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $32.07/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.99,
+        "permit_fee_multiplier_vs_national": 1.27,
+        "overall_install_cost_index": 0.98,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          75,
+          200
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          80,
+          220
+        ],
+        "plumbing_water_heater_typical_usd": [
+          55,
+          110
+        ],
+        "roofing_reroof_typical_usd": [
+          80,
+          300
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "TVA / local utility EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E4"
+    },
+    {
+      "metro_id": "msa_jacksonville_fl",
+      "metro_name": "Jacksonville, FL",
+      "state": "FL",
+      "primary_zip3_prefixes": [
+        "320",
+        "321",
+        "322"
+      ],
+      "representative_zips": [
+        "32202",
+        "32082",
+        "32256"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 78
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 81
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 59,
+          "high": 76
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 49,
+          "high": 65
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 48,
+          "mid": 60,
+          "high": 75
+        },
+        "burden_multiplier_vs_bls_wage": 2.1,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.1 burden. Electrician mean $27.81/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 0.98,
+        "permit_fee_multiplier_vs_national": 1.3,
+        "overall_install_cost_index": 0.94,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          100,
+          180
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          60,
+          174
+        ],
+        "plumbing_water_heater_typical_usd": [
+          50,
+          100
+        ],
+        "roofing_reroof_typical_usd": [
+          98,
+          180
+        ],
+        "evidence_level": "E1",
+        "source_note": "City building/trade fee schedule via BuildPermitGuide Oct 2026 and/or PermitCalculator verified schedules (https://buildpermitguide.com/research/electrical-panel-permit-fees/, https://buildpermitguide.com/research/hvac-permit-fees/, https://buildpermitguide.com/research/roof-permit-fees/data.csv, https://permitcalculator.com/data/electrical-panel-permit-cost.csv, https://permitcalculator.com/data/water-heater-permit-cost/)."
+      },
+      "incentives_notes": "No statewide IRA HEAR; utility HVAC rebates vary (FPL/TECO); federal 25C; Miami SAVE pilot discounted green HVAC permits through early 2027.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.1 burden); Cost indices E4 wage-proxy; Permits E1"
+    },
+    {
+      "metro_id": "msa_columbus_oh",
+      "metro_name": "Columbus, OH",
+      "state": "OH",
+      "primary_zip3_prefixes": [
+        "430",
+        "431",
+        "432"
+      ],
+      "representative_zips": [
+        "43215",
+        "43017",
+        "43123"
+      ],
+      "labor": {
+        "electrician_burdened_hourly_usd": {
+          "low": 49,
+          "mid": 73,
+          "high": 100
+        },
+        "hvac_tech_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 73,
+          "high": 106
+        },
+        "plumber_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 73,
+          "high": 109
+        },
+        "roofer_burdened_hourly_usd": {
+          "low": 45,
+          "mid": 58,
+          "high": 78
+        },
+        "low_voltage_tech_burdened_hourly_usd": {
+          "low": 50,
+          "mid": 67,
+          "high": 81
+        },
+        "burden_multiplier_vs_bls_wage": 2.2,
+        "evidence_level": "E1",
+        "source_note": "BLS OEWS May 2025 MSA mean hourly (API OEUM…03) × 2.2 burden. Electrician mean $33.29/hr. https://www.bls.gov/oes/ ; https://api.bls.gov/publicAPI/v2/timeseries/data/"
+      },
+      "cost_indices": {
+        "material_multiplier_vs_national": 1.0,
+        "permit_fee_multiplier_vs_national": 1.45,
+        "overall_install_cost_index": 0.99,
+        "national_baseline": 1.0
+      },
+      "permits": {
+        "electrical_panel_upgrade_typical_usd": [
+          150,
+          320
+        ],
+        "mechanical_hvac_changeout_typical_usd": [
+          100,
+          280
+        ],
+        "plumbing_water_heater_typical_usd": [
+          100,
+          180
+        ],
+        "roofing_reroof_typical_usd": [
+          100,
+          350
+        ],
+        "evidence_level": "E4",
+        "source_note": "Permit schedule not fully fetched for all trades; ranges from PermitCalculator city pages and adjacent-metro BuildPermitGuide peers (E4). Note: permit schedule not fetched for every trade — verify locally."
+      },
+      "incentives_notes": "AEP Ohio / utility EE rebates; federal 25C; check DSIRE.",
+      "last_verified": "2026-10-23",
+      "evidence_summary": "Labor E1 (BLS OEWS May 2025 × 2.2 burden); Cost indices E4 wage-proxy; Permits E4"
+    }
+  ]
+}

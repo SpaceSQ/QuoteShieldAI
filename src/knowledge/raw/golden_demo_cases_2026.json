@@ -1,0 +1,775 @@
+{
+  "dataset": "golden_demo_cases_2026",
+  "version": "1.0.0",
+  "generated_at": "2026-10-23T20:58:00+08:00",
+  "coverage_note": "v1.0.0: 15 golden demos — Batch2 HVAC/Electrical (6) + Batch3 Plumbing(4)/Roofing(2)/Smart Home(3) (9).",
+  "cases": [
+    {
+      "case_id": "demo_ca_hvac_irvine_3ton_01",
+      "display_badge": "🔥 Real-Pattern 2026 SoCal Case • Fair Save ~$5,400",
+      "location_zip": "92618 (Irvine / Orange County, CA)",
+      "trade_category": "hvac",
+      "scenario_summary": "Homeowner of a 1,950 sq.ft. Irvine SFR called a heavily advertised HVAC company for a tune-up. Tech condemned the 11-year-old 3-ton R-410A system and presented an iPad Good/Better/Best quote of $19,850 for a mid-tier 17 SEER2 inverter heat-pump changeout reusing existing ductwork and a healthy 200A panel.",
+      "contractor_quoted_total_usd": 19850,
+      "verified_fair_range_usd": [
+        11800,
+        14400
+      ],
+      "verified_savings_achieved_usd": 5450,
+      "risk_score": 89,
+      "line_by_line_xray": [
+        {
+          "item": "3-Ton 17 SEER2 Inverter Heat Pump + Air Handler (AHRI match)",
+          "quoted_usd": 13200,
+          "wholesale_bom_usd": 3850,
+          "fair_installed_equipment_usd": 5200,
+          "overcharge_usd": 8000,
+          "evidence_badge": "E2: Distributor catalog / HVAC.place Goodman GZV7-class ~$3,576 condenser retail; complete mid-tier BOM wholesale ~$3,400–$4,700"
+        },
+        {
+          "item": "2-Person Licensed Install Labor 10–14 hrs @ SoCal burdened HVAC ~$81/hr (Batch1 LA)",
+          "quoted_usd": "Bundled (Hidden)",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 2100,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_los_angeles_ca hvac_tech mid $81 × 2 × 12 hrs ≈ $1,944–$2,268"
+        },
+        {
+          "item": "A2L / R-454B 'Special Sensor Package'",
+          "quoted_usd": 1450,
+          "wholesale_bom_usd": 175,
+          "fair_installed_equipment_usd": 350,
+          "overcharge_usd": 1100,
+          "evidence_badge": "E2: SupplyHouse ICM-UA2L-24C-DUAL $219.11"
+        },
+        {
+          "item": "City mechanical permit + Title 24 / HERS",
+          "quoted_usd": 850,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 350,
+          "overcharge_usd": 500,
+          "evidence_badge": "E1: Batch1 LA HVAC permit typical $66–$180; HERS often $150–$300 — $850 is padded"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Sales Manager],\n\nThanks for the $19,850 proposal for the 3-ton 17 SEER2 heat-pump changeout in Irvine (92618). Our ductwork and 200A panel need no modifications — this is a standard 1-day swap.\n\nWe verified mid-tier equipment wholesale (~$3,850) and Orange County burdened HVAC labor from BLS-based rates. With a healthy 35% equipment margin, permit, and warranty registration, a fair turnkey range is $11,800–$14,400.\n\nIf you can revise to $14,200 all-in (city permit + 10-year parts registration included) with the AHRI certificate on the invoice, we will sign today. Otherwise we will proceed with an independent licensed C-20 contractor.\n\nBest,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_az_hvac_phoenix_a2l_02",
+      "display_badge": "⚠️ Phoenix R-454B Sensor Padding • Save ~$1,900",
+      "location_zip": "85251 (Scottsdale / Phoenix Metro, AZ)",
+      "trade_category": "hvac",
+      "scenario_summary": "Phoenix-metro homeowner received a $16,400 quote for a 3-ton R-454B heat-pump replacement. The proposal buried a $1,650 '2026 A2L Safety Compliance Sensor Package' plus $1,200 'nitrogen purge specialty' on a reusable line set.",
+      "contractor_quoted_total_usd": 16400,
+      "verified_fair_range_usd": [
+        9800,
+        12800
+      ],
+      "verified_savings_achieved_usd": 3600,
+      "risk_score": 78,
+      "line_by_line_xray": [
+        {
+          "item": "3-Ton R-454B Heat Pump System (Good/Better tier)",
+          "quoted_usd": 11000,
+          "wholesale_bom_usd": 3600,
+          "fair_installed_equipment_usd": 4860,
+          "overcharge_usd": 6140,
+          "evidence_badge": "E2: Blueprint hvac_3ton_heatpump_2026 better-tier wholesale $3,400–$4,700"
+        },
+        {
+          "item": "A2L Safety Compliance Sensor Package",
+          "quoted_usd": 1650,
+          "wholesale_bom_usd": 175,
+          "fair_installed_equipment_usd": 350,
+          "overcharge_usd": 1300,
+          "evidence_badge": "E2: SupplyHouse ICM-UA2L-24C-DUAL $219.11; Aspen A2L4SA ~$212"
+        },
+        {
+          "item": "Nitrogen Purge / Specialty Flush",
+          "quoted_usd": 1200,
+          "wholesale_bom_usd": 80,
+          "fair_installed_equipment_usd": 400,
+          "overcharge_usd": 800,
+          "evidence_badge": "E3: Public r/hvacadvice nitrogen+vacuum standard practice; consumables <$100"
+        },
+        {
+          "item": "Labor 2× tech × ~10 hrs @ Phoenix HVAC mid $63 (Batch1)",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 1260,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_phoenix_az hvac_tech mid $63"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Estimator],\n\nRegarding the $16,400 R-454B heat-pump quote for 85251: the $1,650 A2L sensor line and $1,200 nitrogen flush are far above distributor cost (sensor boards retail ~$190–$220; flush consumables ~$80–$100).\n\nPlease revise: (1) show OEM part numbers for any A2L mitigation — or confirm it is included with the coil, (2) price nitrogen/vacuum as standard commissioning not a specialty package, and (3) target a turnkey total in the $10,500–$12,800 band consistent with Phoenix labor and mid-tier equipment.\n\nIf you can land at $12,500 with AHRI cert and permit included, we are ready to schedule.\n\nThanks,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_tx_elec_dfw_panel_03",
+      "display_badge": "⚡ DFW 200A Panel Overcharge • Save ~$2,800",
+      "location_zip": "75024 (Plano / Dallas-Fort Worth, TX)",
+      "trade_category": "electrical",
+      "scenario_summary": "Plano homeowner was quoted $7,850 to upgrade a Federal Pacific 100A panel to 200A 'EV/heat-pump ready.' Quote bundled every breaker as AFCI, a $1,400 utility coordination fee, and a $1,200 SPD with no model number. Meter base was reusable per utility visit.",
+      "contractor_quoted_total_usd": 7850,
+      "verified_fair_range_usd": [
+        3200,
+        5200
+      ],
+      "verified_savings_achieved_usd": 2800,
+      "risk_score": 84,
+      "line_by_line_xray": [
+        {
+          "item": "200A 40-space panel + main + re-land circuits (Homeline/Siemens class)",
+          "quoted_usd": 3200,
+          "wholesale_bom_usd": 550,
+          "fair_installed_equipment_usd": 1400,
+          "overcharge_usd": 1800,
+          "evidence_badge": "E2: HD Homeline HOM4080M200PCVP $273.62; Siemens PN $300.62; BOM w/ breakers/grounds ~$450–$900 wholesale"
+        },
+        {
+          "item": "Blanket AFCI breaker replacement (all spaces)",
+          "quoted_usd": 1800,
+          "wholesale_bom_usd": 480,
+          "fair_installed_equipment_usd": 900,
+          "overcharge_usd": 900,
+          "evidence_badge": "E2: AFCI retail ~$40–$55; not every existing circuit requires swap on panel change — cite AHJ"
+        },
+        {
+          "item": "Utility Coordination Fee",
+          "quoted_usd": 1400,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 200,
+          "overcharge_usd": 1200,
+          "evidence_badge": "E3: Typical utility disconnect/reconnect pass-through $0–$300; demand utility invoice"
+        },
+        {
+          "item": "Whole-home SPD (model not listed)",
+          "quoted_usd": 1200,
+          "wholesale_bom_usd": 115,
+          "fair_installed_equipment_usd": 400,
+          "overcharge_usd": 800,
+          "evidence_badge": "E2: Square D HEPD80 $142.80 HD"
+        },
+        {
+          "item": "Labor 2× electrician × 8 hrs @ DFW mid $61 (Batch1)",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 976,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_dallas_fort_worth_tx electrician mid $61; permit typical $73–$321"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Electrical Contractor],\n\nThanks for the $7,850 100A→200A quote for 75024. Oncor confirmed the meter base can stay. Please revise as follows:\n\n1) Price a Homeline or Siemens 200A 40-space panel with only the AFCI/GFCI breakers our AHJ actually requires on modified circuits — list unit prices.\n2) Replace the $1,400 utility fee with the actual Oncor charge at cost.\n3) Specify Square D HEPD80 (or equal) for SPD — retail is ~$143, fair installed ~$350–$500.\n\nA fair turnkey range for panel-only with reusable meter in DFW is about $3,200–$5,200. We can approve $4,900 if itemized that way.\n\nRegards,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_wa_elec_seattle_evse_04",
+      "display_badge": "🔌 Seattle EVSE + Phantom Panel • Save ~$4,100",
+      "location_zip": "98101 (Seattle, WA)",
+      "trade_category": "electrical",
+      "scenario_summary": "Seattle condo garage owner with a 200A house panel (spare spaces, load calc headroom) was quoted $9,200 for a ChargePoint Level 2 install that bundled a 'required' 200A panel upgrade and marked the charger itself at $1,900.",
+      "contractor_quoted_total_usd": 9200,
+      "verified_fair_range_usd": [
+        1800,
+        3200
+      ],
+      "verified_savings_achieved_usd": 4100,
+      "risk_score": 91,
+      "line_by_line_xray": [
+        {
+          "item": "ChargePoint Home Flex Hardwired EVSE",
+          "quoted_usd": 1900,
+          "wholesale_bom_usd": 440,
+          "fair_installed_equipment_usd": 740,
+          "overcharge_usd": 1160,
+          "evidence_badge": "E2: ChargePoint Home Flex HW retail $549 (utility marketplaces); fair equip ≈ $549×0.80×1.35 ≈ $593–$740"
+        },
+        {
+          "item": "60A circuit materials (6 AWG Cu, breaker, disconnect)",
+          "quoted_usd": 1100,
+          "wholesale_bom_usd": 220,
+          "fair_installed_equipment_usd": 450,
+          "overcharge_usd": 650,
+          "evidence_badge": "E2: Big-box / supply-house breaker+wire+connectors typically $150–$350"
+        },
+        {
+          "item": "Forced 200A panel upgrade (load calc not provided)",
+          "quoted_usd": 5200,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 5200,
+          "evidence_badge": "E3: NEC 220 / 625.42 — demand written load calc before accepting panel upgrade"
+        },
+        {
+          "item": "Labor 1 electrician × 5 hrs @ Seattle mid $113 (Batch1)",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 565,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_seattle_wa electrician mid $113"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [EV Installer],\n\nFor the Level 2 install at 98101: our panel already has spare spaces and we will provide a NEC Article 220 load calculation (or accept an EMS). A panel upgrade is not pre-approved.\n\nPlease re-quote circuit + ChargePoint Home Flex Hardwired only. Charger retail is $549 — we will not accept a $1,900 equipment line. Fair Seattle turnkey for this scope is roughly $1,800–$3,200 including permit.\n\nIf you can do $2,850 itemized (model number on invoice), we book this week.\n\nThank you,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_fl_hvac_orlando_flush_05",
+      "display_badge": "🌴 Florida Nitrogen-Flush Gouge • Save ~$2,200",
+      "location_zip": "32801 (Orlando, FL)",
+      "trade_category": "hvac",
+      "scenario_summary": "Orlando homeowner replacing a failed 14 SEER condenser was quoted $14,900 for a like-capacity 3-ton 15.2 SEER2 heat pump. The sales packet added $1,850 for 'EPA-required nitrogen acid flush and UV dye treatment' on copper the tech said was reusable after a pressure test.",
+      "contractor_quoted_total_usd": 14900,
+      "verified_fair_range_usd": [
+        7800,
+        10800
+      ],
+      "verified_savings_achieved_usd": 2200,
+      "risk_score": 76,
+      "line_by_line_xray": [
+        {
+          "item": "3-Ton 15.2 SEER2 Heat Pump + AH (good/better boundary)",
+          "quoted_usd": 9800,
+          "wholesale_bom_usd": 3000,
+          "fair_installed_equipment_usd": 4050,
+          "overcharge_usd": 5750,
+          "evidence_badge": "E2: Blueprint good-tier wholesale $2,450–$3,200; better starts ~$3,400"
+        },
+        {
+          "item": "EPA-Required Nitrogen Acid Flush + UV Dye",
+          "quoted_usd": 1850,
+          "wholesale_bom_usd": 95,
+          "fair_installed_equipment_usd": 450,
+          "overcharge_usd": 1400,
+          "evidence_badge": "E3: r/hvacadvice — nitrogen pressure test + vacuum is standard; 'acid flush' premium rarely justified on clean reusable copper"
+        },
+        {
+          "item": "Labor 2× tech × 10 hrs @ Orlando HVAC mid $57 (Batch1)",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 1140,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_orlando_fl hvac_tech mid $57; permit typical $80–$200"
+        },
+        {
+          "item": "Permit / inspection line",
+          "quoted_usd": 450,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 150,
+          "overcharge_usd": 300,
+          "evidence_badge": "E1: Batch1 Orlando HVAC permit range"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [HVAC Sales],\n\nOn the $14,900 Orlando changeout: please remove or rewrite the $1,850 'EPA-required acid flush' line. EPA AIM Act does not require a billed acid flush for a standard condenser swap on reusable copper — nitrogen pressure test + micron vacuum is the normal commissioning step (~$350–$450 fair).\n\nWith mid-Florida labor and good/better 3-ton equipment, fair turnkey is about $7,800–$10,800. We will sign at $10,400 if you include permit, AHRI certificate, and a documented vacuum reading.\n\nBest,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_ny_elec_nyc_spd_bundle_06",
+      "display_badge": "🗽 NYC/NJ SPD Bundle Gouge • Save ~$1,650",
+      "location_zip": "07302 (Jersey City / NYC Metro, NJ)",
+      "trade_category": "electrical",
+      "scenario_summary": "Jersey City brownstone owner hiring an electrician for a modest panel tidy-up was quoted $2,400 to 'bring the service up to NEC 2023 surge code' via a bundled SPD. No model, Type, or kA rating appeared on the proposal; labor was already covered under a separate service call.",
+      "contractor_quoted_total_usd": 2400,
+      "verified_fair_range_usd": [
+        400,
+        750
+      ],
+      "verified_savings_achieved_usd": 1650,
+      "risk_score": 72,
+      "line_by_line_xray": [
+        {
+          "item": "Whole-home SPD (unspecified)",
+          "quoted_usd": 1800,
+          "wholesale_bom_usd": 115,
+          "fair_installed_equipment_usd": 400,
+          "overcharge_usd": 1400,
+          "evidence_badge": "E2: Square D HEPD80 $142.80 HD; HOM2175SB $102; fair installed $350–$650"
+        },
+        {
+          "item": "Premium 'code compliance documentation package'",
+          "quoted_usd": 400,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 50,
+          "overcharge_usd": 350,
+          "evidence_badge": "E4: Permit sticker / invoice model line is sufficient in most AHJs — $400 PDF package is padding"
+        },
+        {
+          "item": "Labor already in service call (1 hr @ NYC elec mid $100 Batch1)",
+          "quoted_usd": 200,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 100,
+          "overcharge_usd": 100,
+          "evidence_badge": "E1: Batch1 msa_new_york_ny electrician mid $100; SPD install typically 1–2 hrs"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Electrician],\n\nPlease revise the NEC surge line for 07302. We want a listed Type 1 or Type 2 SPD with model number on the invoice — Square D HEPD80 or Homeline plug-on equivalent is fine (retail ~$100–$145).\n\nFair installed add-on in NYC metro is about $400–$750, not $2,400. If you can do HEPD80 installed for $550 while you are already on site, approved.\n\nThanks,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_co_plumb_denver_tank_07",
+      "display_badge": "Denver 50-Gal Tank Gouge • Fair Save ~$1,850",
+      "location_zip": "80014 (Aurora / Denver metro, CO)",
+      "trade_category": "plumbing",
+      "scenario_summary": "Aurora homeowner's 11-year electric 50-gal failed overnight. Same-day plumber quoted $4,650 for a code-compliant Rheem 50-gal swap including $650 expansion tank, $450 haul-away, $900 pan/straps package, and $280 permit.",
+      "contractor_quoted_total_usd": 4650,
+      "verified_fair_range_usd": [
+        1900,
+        2800
+      ],
+      "verified_savings_achieved_usd": 1850,
+      "risk_score": 82,
+      "line_by_line_xray": [
+        {
+          "item": "Rheem Performance 50-Gal Electric Tank (XE50M06ST45U1 class)",
+          "quoted_usd": 1850,
+          "wholesale_bom_usd": 455,
+          "fair_installed_equipment_usd": 770,
+          "overcharge_usd": 1080,
+          "evidence_badge": "E2: HD Rheem Performance 50-Gal Electric $569 retail → wholesale≈$455; Fair_Equip=WS×1.35≈$614–$770 with valves"
+        },
+        {
+          "item": "Thermal Expansion Tank Code Required",
+          "quoted_usd": 650,
+          "wholesale_bom_usd": 45,
+          "fair_installed_equipment_usd": 175,
+          "overcharge_usd": 475,
+          "evidence_badge": "E2/E3: Expansion tank retail ~$35–$70; fair installed ~$120–$220. https://www.reddit.com/r/askaplumber/comments/1edqbhs/water_heater_charge/"
+        },
+        {
+          "item": "Pan + Seismic Straps + T&P Drain Package",
+          "quoted_usd": 900,
+          "wholesale_bom_usd": 85,
+          "fair_installed_equipment_usd": 280,
+          "overcharge_usd": 620,
+          "evidence_badge": "E2: Pan/straps/drain materials typically <$100 combined wholesale"
+        },
+        {
+          "item": "2× plumber × 4 hrs @ Denver mid $76 (Batch1) + permit",
+          "quoted_usd": "Bundled in total",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 668,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_denver_co plumber mid $76 × 2 × 4 = $608; permit typical $35–$90"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Plumbing Co],\n\nThanks for the $4,650 same-day 50-gal quote in 80014. We verified Rheem Performance 50-Gal retail at ~$569 (wholesale ≈$455) and Denver burdened plumber rates from our cost matrix (~$76/hr mid).\n\nPlease revise:\n1) Equipment at a healthy margin on the Rheem (or Bradford White gas if we switch) — not $1,850 for the tank alone.\n2) Expansion tank at fair installed (~$175), not $650.\n3) Pan/straps only if existing are non-compliant — itemize materials.\n4) Haul-away ≤$100.\n\nA fair turnkey electric tank swap in Denver is about $1,900–$2,800. We can approve $2,650 today with permit included and warranty registration.\n\nThanks,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_ga_plumb_atlanta_hpwh_08",
+      "display_badge": "Atlanta HPWH Padding • Fair Save ~$2,900",
+      "location_zip": "30024 (Suwanee / Atlanta metro, GA)",
+      "trade_category": "plumbing",
+      "scenario_summary": "Suwanee homeowner pursuing utility HPWH rebate was quoted $8,900 for a Rheem ProTerra 50-Gal hybrid. Quote added a $1,800 new 30A circuit despite existing 240V tank circuit, a $950 condensate climate kit, and an $800 rebate processing fee.",
+      "contractor_quoted_total_usd": 8900,
+      "verified_fair_range_usd": [
+        3800,
+        5200
+      ],
+      "verified_savings_achieved_usd": 2900,
+      "risk_score": 88,
+      "line_by_line_xray": [
+        {
+          "item": "Rheem ProTerra 50-Gal Hybrid HPWH",
+          "quoted_usd": 4200,
+          "wholesale_bom_usd": 1560,
+          "fair_installed_equipment_usd": 2106,
+          "overcharge_usd": 2094,
+          "evidence_badge": "E2: HD Rheem ProTerra XE50T10HS45U1 ~$1,950 retail (sale obs. ~$1,372); WS≈$1,560; Fair_Equip×1.35≈$2,106"
+        },
+        {
+          "item": "New Dedicated 30A Circuit (existing 240V present)",
+          "quoted_usd": 1800,
+          "wholesale_bom_usd": 120,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 1800,
+          "evidence_badge": "E2: Existing electric-tank circuit usually reusable — $1,800 new-circuit line is padding when panel space and wire gauge already comply"
+        },
+        {
+          "item": "Condensate Pump + Climate Kit",
+          "quoted_usd": 950,
+          "wholesale_bom_usd": 110,
+          "fair_installed_equipment_usd": 320,
+          "overcharge_usd": 630,
+          "evidence_badge": "E2: Condensate pump retail ~$60–$150; fair installed ~$250–$400 when needed"
+        },
+        {
+          "item": "Rebate Processing Fee",
+          "quoted_usd": 800,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 800,
+          "evidence_badge": "E4: Utility/IRA rebate belongs to homeowner unless written assignment — $0 fair processing fee"
+        },
+        {
+          "item": "Labor 2× plumber × 6 hrs @ Atlanta mid $61 + permit",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 842,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_atlanta_ga plumber mid $61 × 2 × 6 = $732; WH permit $55–$110"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Plumbing / HVAC Co],\n\nThanks for the $8,900 ProTerra HPWH proposal for 30024. The existing 240V water-heater circuit was verified adequate — please remove the $1,800 new-circuit line or prove non-compliance with photos/ampacity.\n\nRheem ProTerra 50-Gal retail is ~$1,950; with fair margin, labor, condensate (if gravity drain isn't possible), and permit, a fair Atlanta turnkey range is $3,800–$5,200 before utility rebates. Drop the $800 rebate processing fee or assign rebates to us in writing.\n\nWe can approve $5,100 all-in with rebate paperwork filed in our name.\n\nRegards,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_tx_plumb_houston_tankless_09",
+      "display_badge": "Houston Tankless Vent/Gas Pad • Save ~$3,400",
+      "location_zip": "77494 (Katy / Houston metro, TX)",
+      "trade_category": "plumbing",
+      "scenario_summary": "Katy homeowner replacing a failed 50-gal gas tank was quoted $11,200 for a Rinnai RX199iN tankless retrofit. Quote included $2,200 specialty exhaust, $1,800 gas upsize without a load sheet, and a $650 proprietary valve maintenance package.",
+      "contractor_quoted_total_usd": 11200,
+      "verified_fair_range_usd": [
+        5200,
+        7200
+      ],
+      "verified_savings_achieved_usd": 3400,
+      "risk_score": 86,
+      "line_by_line_xray": [
+        {
+          "item": "Rinnai Sensei RX199iN 11.1 GPM Condensing Tankless",
+          "quoted_usd": 4200,
+          "wholesale_bom_usd": 1226,
+          "fair_installed_equipment_usd": 1655,
+          "overcharge_usd": 2545,
+          "evidence_badge": "E2: HD Rinnai RX199iN $1,532.79 retail → WS≈$1,226; Fair_Equip×1.35≈$1,655"
+        },
+        {
+          "item": "Specialty Exhaust / Vent System",
+          "quoted_usd": 2200,
+          "wholesale_bom_usd": 280,
+          "fair_installed_equipment_usd": 750,
+          "overcharge_usd": 1450,
+          "evidence_badge": "E2: Condensing units use PVC/PP vent; kit+fittings often $150–$400 WS; fair installed vent ~$600–$900 for simple run"
+        },
+        {
+          "item": "Gas Line Upsize (no BTU worksheet)",
+          "quoted_usd": 1800,
+          "wholesale_bom_usd": 180,
+          "fair_installed_equipment_usd": 650,
+          "overcharge_usd": 1150,
+          "evidence_badge": "E3: Demand load calc; fair when needed ~$500–$800 — not a blind $1,800"
+        },
+        {
+          "item": "Isolation Valve Maintenance Package",
+          "quoted_usd": 650,
+          "wholesale_bom_usd": 75,
+          "fair_installed_equipment_usd": 220,
+          "overcharge_usd": 430,
+          "evidence_badge": "E2: Service valve sets typically $80–$180 retail"
+        },
+        {
+          "item": "Labor 2× plumber × 10 hrs @ Houston mid $64 + permit",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 1430,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_houston_tx plumber mid $64 × 2 × 10 = $1,280; WH permit $90–$160"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Tankless Specialist],\n\nThanks for the $11,200 Rinnai RX199iN quote for 77494. HD lists the RX199iN at ~$1,533. Please revise with:\n1) Itemized PVC/PP vent materials + labor (not a $2,200 specialty lump).\n2) Gas BTU load worksheet — upsize only if the calc requires it, at unit pricing.\n3) Standard isolation valve kit (~$220 fair installed), not a $650 maintenance package.\n\nFair Houston turnkey for this class is about $5,200–$7,200. We can sign at $6,900 with permit and warranty registration included.\n\nBest,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_il_plumb_chicago_pex_10",
+      "display_badge": "Chicago PEX Repipe Overcharge • Save ~$6,200",
+      "location_zip": "60045 (Lake Forest / Chicago metro, IL)",
+      "trade_category": "plumbing",
+      "scenario_summary": "Lake Forest 2.5-bath 1,900 sq.ft. home with failing polybutylene was quoted $21,500 for Uponor PEX-A repipe. Bid stacked $200/fixture access fees on top of a 2-man 2-week day rate, forced push-to-connect fittings, and a $4,500 blind drywall restoration package.",
+      "contractor_quoted_total_usd": 21500,
+      "verified_fair_range_usd": [
+        9000,
+        14500
+      ],
+      "verified_savings_achieved_usd": 6200,
+      "risk_score": 91,
+      "line_by_line_xray": [
+        {
+          "item": "Uponor AquaPEX materials (pipe + ProPEX fittings + manifold)",
+          "quoted_usd": 6800,
+          "wholesale_bom_usd": 1800,
+          "fair_installed_equipment_usd": 2430,
+          "overcharge_usd": 4370,
+          "evidence_badge": "E2: SupplyHouse Uponor 1/2 in. AquaPEX $54.45/100 ft; whole-home BOM typically $1,400–$2,400 WS for 2–3 bath"
+        },
+        {
+          "item": "Per-Fixture Access Fees (stacked on day-rate)",
+          "quoted_usd": 3500,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 3500,
+          "evidence_badge": "E3: Double-billing access on top of multi-day crew rate — choose one method. https://www.geekpoweredstudios.com/post/whole-home-repipe-cost-guide-2026"
+        },
+        {
+          "item": "Push-to-Connect Fitting Premium vs ProPEX Expansion",
+          "quoted_usd": 2200,
+          "wholesale_bom_usd": 400,
+          "fair_installed_equipment_usd": 900,
+          "overcharge_usd": 1300,
+          "evidence_badge": "E2: Uponor system standard is ProPEX expansion — cheaper and code-accepted"
+        },
+        {
+          "item": "Blind Drywall Restoration Package",
+          "quoted_usd": 4500,
+          "wholesale_bom_usd": 350,
+          "fair_installed_equipment_usd": 1500,
+          "overcharge_usd": 3000,
+          "evidence_badge": "E4: Demand room-by-room patch count or capped allowance"
+        },
+        {
+          "item": "Labor 2× plumber × 36 hrs @ Chicago mid $109 + permit",
+          "quoted_usd": "Day-rate bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 8048,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_chicago_il plumber mid $109 × 2 × 36 ≈ $7,848; plumbing permit $60–$150+"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Repipe Contractor],\n\nThanks for the $21,500 Uponor PEX-A quote for our 1,900 sq.ft. Lake Forest home (60045). Please restructure:\n1) Uponor AquaPEX + ProPEX expansion only — no house-wide push-to-connect premium.\n2) Remove per-fixture access fees OR switch to pure day-rate — not both.\n3) Cap drywall patch at $1,500 with photo true-up, or exclude and let us hire a taper.\n\nFair Chicago-metro crawl/attic repipe for 2–3 baths is roughly $9,000–$14,500. We can approve $13,800 with permit, pressure test, and 2-year workmanship warranty.\n\nThank you,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_nc_roof_charlotte_shingle_11",
+      "display_badge": "Charlotte Architectural Reroof Pad • Save ~$7,500",
+      "location_zip": "28078 (Huntersville / Charlotte metro, NC)",
+      "trade_category": "roofing",
+      "scenario_summary": "Huntersville 2,400 sq.ft. (≈24 square) home received a $22,800 storm-chaser quote for GAF Timberline HDZ. Bid forced $4,500 gutter guards, $3,200 full-roof ice & water, and a $5,000 blind decking package before tear-off.",
+      "contractor_quoted_total_usd": 22800,
+      "verified_fair_range_usd": [
+        10000,
+        14500
+      ],
+      "verified_savings_achieved_usd": 7500,
+      "risk_score": 90,
+      "line_by_line_xray": [
+        {
+          "item": "GAF Timberline HDZ materials (~26 sq with waste) + underlayment/drip/ridge",
+          "quoted_usd": 9800,
+          "wholesale_bom_usd": 5200,
+          "fair_installed_equipment_usd": 7020,
+          "overcharge_usd": 2780,
+          "evidence_badge": "E2: HD GAF Timberline HDZ $42.97/bundle (~$128.91/sq retail); supply-house ~$102–$111/sq; 26 sq shingles WS≈$2,700–$2,900 + accessories"
+        },
+        {
+          "item": "Gutter Guard Required Package",
+          "quoted_usd": 4500,
+          "wholesale_bom_usd": 600,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 4500,
+          "evidence_badge": "E3: Optional upsell — not required for GAF warranty; remove or price as separate option ~$1,200–$2,500"
+        },
+        {
+          "item": "Full-Roof Ice & Water Shield",
+          "quoted_usd": 3200,
+          "wholesale_bom_usd": 450,
+          "fair_installed_equipment_usd": 1100,
+          "overcharge_usd": 2100,
+          "evidence_badge": "E3: Charlotte rarely needs full-deck ice & water; eaves/valleys typically suffice. https://www.reddit.com/r/Roofing/comments/15x0d0g/question_ice_and_water_shield/"
+        },
+        {
+          "item": "Blind Decking Replacement Package",
+          "quoted_usd": 5000,
+          "wholesale_bom_usd": 800,
+          "fair_installed_equipment_usd": 1800,
+          "overcharge_usd": 3200,
+          "evidence_badge": "E3: Demand per-sheet unit price (~$60–$100 installed) + photos after tear-off"
+        },
+        {
+          "item": "Labor 4× roofer × 20 hrs @ Charlotte mid $52 + permit",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 4410,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_charlotte_nc roofer mid $52 × 4 × 20 = $4,160; roof permit $0–$256"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Roofing Co],\n\nThanks for the $22,800 GAF Timberline HDZ quote on our ~24-square Huntersville roof (28078). Please revise:\n1) Remove gutter guards from base — optional separate line only.\n2) Ice & water at eaves/valleys/penetrations per code — not full-roof unless you justify climate.\n3) Decking at a stated $/sheet after tear-off photos — kill the $5,000 blind package.\n\nFair Charlotte architectural reroof for this size is about $10,000–$14,500. We can approve $13,900 with permit, dump fees, and GAF registration.\n\nRegards,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_mn_roof_minneapolis_reroof_12",
+      "display_badge": "Minneapolis Ice-Dam Reroof Reality Check • Save ~$5,800",
+      "location_zip": "55102 (St. Paul / Minneapolis metro, MN)",
+      "trade_category": "roofing",
+      "scenario_summary": "St. Paul homeowner on a 2,600 sq.ft. (≈28 square) moderate-pitch roof was quoted $27,400 for Owens Corning Duration. Quote was more reasonable on shingles but still padded $2,800 skylight must-replace (no leak), $1,500 gutter detach already owed in base, and inflated ridge-vent as a $1,900 upgrade.",
+      "contractor_quoted_total_usd": 27400,
+      "verified_fair_range_usd": [
+        14500,
+        19500
+      ],
+      "verified_savings_achieved_usd": 5800,
+      "risk_score": 78,
+      "line_by_line_xray": [
+        {
+          "item": "Owens Corning Duration system (~30 sq w/ waste) + ice & water eaves (climate-justified)",
+          "quoted_usd": 16500,
+          "wholesale_bom_usd": 7500,
+          "fair_installed_equipment_usd": 10125,
+          "overcharge_usd": 6375,
+          "evidence_badge": "E2: HD OC Duration ~$42.97/bundle; MN ice & water at eaves is legitimate — full-system fair materials higher than Sun Belt"
+        },
+        {
+          "item": "Skylight Must-Replace (no moisture evidence)",
+          "quoted_usd": 2800,
+          "wholesale_bom_usd": 350,
+          "fair_installed_equipment_usd": 950,
+          "overcharge_usd": 1850,
+          "evidence_badge": "E4: Offer reflash-only option ~$600–$1,200; full replace only if unit failed"
+        },
+        {
+          "item": "Gutter Detach/Reset Supplemental",
+          "quoted_usd": 1500,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 400,
+          "overcharge_usd": 1100,
+          "evidence_badge": "E3: Often should be in base reroof when drip edge is replaced. https://www.reddit.com/r/Roofing/comments/1erjqjo/got_a_1500_supplemental_charge_on_a_roof/"
+        },
+        {
+          "item": "Ridge Vent Upgrade",
+          "quoted_usd": 1900,
+          "wholesale_bom_usd": 180,
+          "fair_installed_equipment_usd": 550,
+          "overcharge_usd": 1350,
+          "evidence_badge": "E2: Continuous ridge vent materials modest; fair installed often $400–$700"
+        },
+        {
+          "item": "Labor 4× roofer × 24 hrs @ Minneapolis mid $80 + permit",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 8145,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_minneapolis_mn roofer mid $80 × 4 × 24 = $7,680; roof permit $150–$485"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Roofing Co],\n\nThanks for the $27,400 Owens Corning Duration quote for 55102. Minnesota ice & water at eaves is fair — keep that. Please change:\n1) Skylight to reflash-only unless you document failure ($950 fair vs $2,800 replace).\n2) Fold gutter detach/reset into base when installing new drip edge.\n3) Ridge vent at materials+labor (~$550), not a $1,900 upgrade.\n\nFair MSP architectural reroof for ~28 squares with proper ice & water is about $14,500–$19,500. We can approve $18,900 turnkey.\n\nBest,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_tx_smart_austin_cat6_13",
+      "display_badge": "Austin Cat6 Retrofit Gouge • Save ~$3,100",
+      "location_zip": "78701 (Downtown / Austin metro, TX)",
+      "trade_category": "smart_home",
+      "scenario_summary": "Austin condo-to-SFH townhome owner was quoted $9,400 for 14 Cat6 drops + smart panel. Integrator charged $450/drop despite open attic access, forced a $2,200 proprietary enclosure, and refused solid-copper jacket documentation.",
+      "contractor_quoted_total_usd": 9400,
+      "verified_fair_range_usd": [
+        3800,
+        6200
+      ],
+      "verified_savings_achieved_usd": 3100,
+      "risk_score": 84,
+      "line_by_line_xray": [
+        {
+          "item": "14× Cat6 drops @ $450 (open attic)",
+          "quoted_usd": 6300,
+          "wholesale_bom_usd": 350,
+          "fair_installed_equipment_usd": 2450,
+          "overcharge_usd": 3850,
+          "evidence_badge": "E2: Cat6 1000 ft bulk ~$190 HD class; fair retrofit drop with attic access ~$120–$220 installed"
+        },
+        {
+          "item": "Proprietary Smart Structured Media Panel",
+          "quoted_usd": 2200,
+          "wholesale_bom_usd": 280,
+          "fair_installed_equipment_usd": 650,
+          "overcharge_usd": 1550,
+          "evidence_badge": "E4: Labeled patch panel + $100–$400 enclosure usually sufficient"
+        },
+        {
+          "item": "Labor / certification tests (should be in per-drop)",
+          "quoted_usd": 900,
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 400,
+          "overcharge_usd": 500,
+          "evidence_badge": "E1: Batch1 msa_austin_tx LV tech mid $60; certification should be included in drop price"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Low-Voltage Integrator],\n\nThanks for the $9,400 structured-wiring quote for 78701 (14 drops). Attic access is open — $450/drop is new-construction fishing pricing. Please revise to:\n1) Solid bare-copper Cat6 CMR with jacket-print photos.\n2) ≤$200/drop installed including wiremap certification PDF.\n3) Standard 24-port patch panel + wall enclosure (≤$650 fair) — not a $2,200 smart panel.\n\nFair Austin range for this scope is $3,800–$6,200. We can approve $5,600 with as-built labels.\n\nThanks,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_ca_smart_sandiego_unifi_14",
+      "display_badge": "San Diego UniFi + Caséta Bundle Trap • Save ~$4,200",
+      "location_zip": "92037 (La Jolla / San Diego, CA)",
+      "trade_category": "smart_home",
+      "scenario_summary": "La Jolla homeowner asked for whole-home Wi-Fi and smart dimmers. Integrator quoted $16,800 labeled enterprise UniFi + Lutron but line-items showed consumer mesh gear, forced a $4,800 Protect camera package, and charged full in-wall dimmers for every 3-way leg.",
+      "contractor_quoted_total_usd": 16800,
+      "verified_fair_range_usd": [
+        7500,
+        11000
+      ],
+      "verified_savings_achieved_usd": 4200,
+      "risk_score": 87,
+      "line_by_line_xray": [
+        {
+          "item": "Enterprise Wi-Fi (actually consumer mesh) — 3 nodes",
+          "quoted_usd": 3500,
+          "wholesale_bom_usd": 400,
+          "fair_installed_equipment_usd": 1200,
+          "overcharge_usd": 2300,
+          "evidence_badge": "E2: Real UniFi U7 Pro ~$189; Cloud Gateway Ultra ~$129 — demand exact SKUs from store.ui.com"
+        },
+        {
+          "item": "Lutron Caséta 18 dimmers + hub (3-way double-charged)",
+          "quoted_usd": 4200,
+          "wholesale_bom_usd": 1400,
+          "fair_installed_equipment_usd": 2300,
+          "overcharge_usd": 1900,
+          "evidence_badge": "E2: HD Caséta PD-6WCL $64.95; 3-ways should use Pico (~$20–$35) not second full dimmer"
+        },
+        {
+          "item": "Forced UniFi Protect Camera Bundle",
+          "quoted_usd": 4800,
+          "wholesale_bom_usd": 900,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 4800,
+          "evidence_badge": "E4: Optional — remove from base; fair 3–4 cam addon separate ~$1,800–$3,500 if desired"
+        },
+        {
+          "item": "Labor 2× LV × 20 hrs @ San Diego mid $77 + programming",
+          "quoted_usd": "Bundled",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 3500,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_san_diego_ca LV mid $77 × 2 × 20 = $3,080 + setup buffer"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Integrator],\n\nThanks for the $16,800 UniFi + Lutron proposal for 92037. Please issue a corrected bid that:\n1) Lists exact UniFi SKUs (U7 Pro / gateway / PoE switch) — no consumer mesh under an enterprise label.\n2) Uses Pico remotes for 3-ways (Caséta PD-6WCL is $64.95 at HD).\n3) Moves cameras to an optional addendum — we did not request Protect.\n\nFair San Diego turnkey for UniFi Wi-Fi 7 (3–4 AP) + Caséta whole-home is about $7,500–$11,000. We can approve $10,400 without cameras.\n\nBest,\n[Homeowner]"
+    },
+    {
+      "case_id": "demo_or_smart_portland_lutron_15",
+      "display_badge": "Portland RadioRA Upsell vs Caséta • Save ~$5,600",
+      "location_zip": "97201 (Portland, OR)",
+      "trade_category": "smart_home",
+      "scenario_summary": "Portland homeowner wanted Caséta-level dimming on 16 loads plus better Wi-Fi. Dealer insisted RadioRA 3 was the only reliable option, quoting $19,500 including a $3,500 UniFi camera add-on and pro-only programming fees stacked on hardware already carrying premium margins.",
+      "contractor_quoted_total_usd": 19500,
+      "verified_fair_range_usd": [
+        8500,
+        13500
+      ],
+      "verified_savings_achieved_usd": 5600,
+      "risk_score": 85,
+      "line_by_line_xray": [
+        {
+          "item": "RadioRA 3 processor + 16 dimmers (vs Caséta alternative)",
+          "quoted_usd": 9800,
+          "wholesale_bom_usd": 4200,
+          "fair_installed_equipment_usd": 5670,
+          "overcharge_usd": 4130,
+          "evidence_badge": "E2/E4: RadioRA 3 is legitimate pro tier; for 16 loads Caséta (~$65/dimmer HD) often meets need at far lower BOM — demand written why Caséta fails"
+        },
+        {
+          "item": "UniFi Wi-Fi 7 (4× U7 Pro + gateway + switch)",
+          "quoted_usd": 3200,
+          "wholesale_bom_usd": 1100,
+          "fair_installed_equipment_usd": 1485,
+          "overcharge_usd": 1715,
+          "evidence_badge": "E2: U7 Pro ~$189 × 4 + Gateway Ultra ~$129 + PoE switch ~$200–$400 = ~$1,100–$1,400 retail class"
+        },
+        {
+          "item": "Protect Cameras Forced Add",
+          "quoted_usd": 3500,
+          "wholesale_bom_usd": 700,
+          "fair_installed_equipment_usd": 0,
+          "overcharge_usd": 3500,
+          "evidence_badge": "E4: Optional trap — remove unless requested"
+        },
+        {
+          "item": "Labor 2× LV × 28 hrs @ Portland mid $87",
+          "quoted_usd": "Programming fees stacked",
+          "wholesale_bom_usd": 0,
+          "fair_installed_equipment_usd": 4872,
+          "overcharge_usd": 0,
+          "evidence_badge": "E1: Batch1 msa_portland_or LV mid $87 × 2 × 28 = $4,872 — avoid double-charging programming on top"
+        }
+      ],
+      "winning_counter_offer_script": "Hi [Lutron Dealer],\n\nThanks for the $19,500 RadioRA 3 + UniFi quote for 97201. We only need reliable dimming on 16 loads and solid Wi-Fi. Please provide two options:\nA) Lutron Caséta + hub + Pico 3-ways + UniFi U7 Pro ×3–4 (our preference).\nB) RadioRA 3 only if you document a Caséta technical blocker in writing.\n\nRemove Protect cameras from base. Fair Portland range for Caséta+UniFi is ~$8,500–$13,500; RadioRA 3 best-tier can go higher but must be justified. We can approve Option A at $12,200.\n\nThank you,\n[Homeowner]"
+    }
+  ]
+}

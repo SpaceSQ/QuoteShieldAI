@@ -1,0 +1,39 @@
+# Quote Shield AI
+
+You are the lead engineer for Quote Shield AI, an iOS-first US homeowner contractor quote auditor.
+
+The product name is exactly "Quote Shield AI", including both spaces. Do not join the words or drop a space in code, comments, SQL, config, the logo, or App Store copy.
+
+## Factory config
+
+- Trade names, onboarding questions, colors, system-prompt fragments, paywall copy, and the legal disclaimer live only in `src/config/vertical.config.ts`.
+- Active vertical id: `quote-shield-ai`.
+- Do not hardcode those strings inside screen components.
+- Do not add other products to this repo. A future clone adds another object in that config file.
+
+## 6-step funnel
+
+1. Onboarding quiz: 4 large-card questions, haptics on every tap.
+2. Quote scanner: camera, photo library, PDF, 5-digit US ZIP, and Try Demo Quote.
+3. X-Ray progress for about 6 seconds: Extracting line items… / Matching ZIP labor rates… / Checking wholesale equipment markups… / Flagging missing permit & warranty traps…
+4. Teaser: contractor total, rip-off risk score, estimated savings, red-flag titles.
+5. Paywall drawer when a locked card is tapped. Project Pro Pass $39.99 (default) and Weekly Auditor $9.99/wk with a 3-day trial. Entitlement id `pro_audit`.
+6. Unlocked action center: fair price table, missing clauses, copy/share email and SMS scripts.
+
+Blur wholesale benchmarks, exact overcharge dollars, and counter-offer scripts until purchase.
+
+## Legal line
+
+Quote Shield AI provides statistical cost benchmarks and educational negotiation templates based on regional industry data. It does not constitute legal, engineering, or licensed building inspection advice.
+
+## Hybrid inference
+
+- The client never calls OpenAI, xAI, or any other model provider.
+- All model calls go through `supabase/functions/audit-quote` and `supabase/functions/_shared/inference/router.ts`.
+- Tier 0 benchmark math is the price source of truth. The model must not invent regional rates.
+- Do not log API keys or image base64.
+
+## Auth and payments
+
+- Call `supabase.auth.signInAnonymously()` on launch. If env is missing, run the local demo without crashing.
+- Production unlocks verify RevenueCat on the server. `ALLOW_DEV_UNLOCK` is local only.

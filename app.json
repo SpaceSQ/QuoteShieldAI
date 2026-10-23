@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Quote Shield AI",
+    "slug": "quote-shield-ai",
+    "scheme": "quote-shield-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#020617"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.quoteshield.app"
+    },
+    "android": {
+      "package": "com.quoteshield.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#020617",
+        "foregroundImage": "./assets/icon.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Quote Shield AI uses the camera to photograph a contractor quote.",
+          "photosPermission": "Quote Shield AI opens your photo library so you can upload a contractor quote."
+        }
+      ]
+    ]
+  }
+}

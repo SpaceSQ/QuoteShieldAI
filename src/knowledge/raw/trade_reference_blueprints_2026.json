@@ -1,0 +1,1229 @@
+{
+  "dataset": "trade_reference_blueprints_2026",
+  "version": "1.0.0",
+  "generated_at": "2026-10-23T20:58:00+08:00",
+  "coverage_note": "v1.0.0: Batch1 labor matrix + Batch2 HVAC/Electrical (8) + Batch3 Plumbing/Roofing/Smart Home (7) = 15 blueprints.",
+  "fair_pricing_formulas": {
+    "Fair_Equipment": "Wholesale_BOM × 1.35",
+    "Fair_Labor": "crew_size × hours × regional_burdened_hourly_from_us_zip_cost_matrix_2026",
+    "Fair_Total_Range": "(Equip + Labor + Permit) × [0.92, 1.12]",
+    "Wholesale_from_retail": "Retail × 0.80 when only public retail is visible"
+  },
+  "blueprints": [
+    {
+      "blueprint_id": "hvac_3ton_heatpump_2026",
+      "trade_category": "hvac",
+      "project_title": "3-Ton Central Air-Source Heat Pump Full Replacement (2026 R-454B/R-32 Compliant)",
+      "applicable_home_size_sqft": "1,500 - 2,200 sq.ft.",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Standard Efficiency (14.3 - 15.2 SEER2 Single-Stage)",
+          "representative_brands_models": [
+            "Goodman GLZS4BA3610 / matching air handler (R-32)",
+            "Carrier Comfort 27SCA536A003 condenser (R-454B) + matched coil/AH"
+          ],
+          "wholesale_bom_low_usd": 2450,
+          "wholesale_bom_high_usd": 3200,
+          "installed_fair_national_low_usd": 6200,
+          "installed_fair_national_high_usd": 8600
+        },
+        "better": {
+          "tier_name": "Mid-High Efficiency (16 - 18 SEER2 Two-Stage / Inverter)",
+          "representative_brands_models": [
+            "Goodman GZV7SA3610A 19 SEER2 inverter condenser (~$3,576 retail)",
+            "Bosch IDS Plus BOVA-36RTB-M20S / BOVB-36HDN1-M20G",
+            "Carrier 18 SEER2 two-stage R-454B (~$3,000 condenser retail at EPA Distributors)"
+          ],
+          "wholesale_bom_low_usd": 3400,
+          "wholesale_bom_high_usd": 4700,
+          "installed_fair_national_low_usd": 8500,
+          "installed_fair_national_high_usd": 12000
+        },
+        "best": {
+          "tier_name": "Variable-Speed Flagship (20+ SEER2 Communicating System)",
+          "representative_brands_models": [
+            "Carrier Infinity 24VNA436 / matching Infinity air handler",
+            "Trane XV20i / matching air handler",
+            "Bosch IDS Premium matched communicating system"
+          ],
+          "wholesale_bom_low_usd": 5200,
+          "wholesale_bom_high_usd": 7200,
+          "installed_fair_national_low_usd": 12500,
+          "installed_fair_national_high_usd": 17000
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 8,
+        "hours_high": 14,
+        "typical_permit_and_inspection_usd": [
+          180,
+          450
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "2026 A2L Refrigerant (R-454B/R-32) Sensor / Mitigation Board Gouging",
+          "typical_contractor_charge_usd": 1500,
+          "actual_wholesale_cost_usd": 175,
+          "fair_installed_addon_usd": 350,
+          "evidence_level": "E2",
+          "source_note": "SupplyHouse ICM-UA2L-24C-DUAL universal A2L detection board listed $219.11 (Oct 2026); Aspen/ACiQ A2L4SA RDS kits ~$190–$212. Many OEMs include sensor with A2L coil — charging $1,200–$1,800 as a separate line is padding. https://www.supplyhouse.com/ICM-Controls-ICM-UA2L-24C-DUAL-Universal-A2L-Refrigerant-Detection-for-R32-R454B-Refrigerants-ICM-UA2L-24C-DUAL"
+        },
+        {
+          "trap_name": "Reuse Copper Line-Set 'Nitrogen Flush / Acid Flush' Padding",
+          "typical_contractor_charge_usd": 1800,
+          "actual_wholesale_cost_usd": 95,
+          "fair_installed_addon_usd": 450,
+          "evidence_level": "E3",
+          "source_note": "Public r/hvacadvice threads confirm nitrogen pressure-test + vacuum is standard (~1–2 hrs, tank/regulator consumables <$100). Charging $1,500–$2,500 for a 'special flush' on reusable copper is a common padding line. https://www.reddit.com/r/hvacadvice/comments/1ougvd7/nitrogen_test_or_just_vacuum_seems_to_be_opposing/"
+        },
+        {
+          "trap_name": "Unnecessary Full Duct Replacement Bundled Into Changeout",
+          "typical_contractor_charge_usd": 6500,
+          "actual_wholesale_cost_usd": 1200,
+          "fair_installed_addon_usd": 2800,
+          "evidence_level": "E4",
+          "source_note": "If static pressure / duct leakage test was never performed, a $5k–$8k 'must replace all ducts' add-on is often sales padding. Fair partial repairs (boots, returns, Mastic) typically $1,500–$3,500. Angi/Homewyse regional duct-repair summaries used as E4 when no Manual D report provided."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must provide official AHRI Certificate Reference Number matching outdoor + indoor models on invoice",
+        "Must specify Manual J load calculation was performed (not rule-of-thumb tonnage)",
+        "Must include municipal mechanical permit and any required HERS/commissioning test fees",
+        "Must commit to registering 10-year manufacturer parts warranty within required window (often 60–90 days)",
+        "Must disclose refrigerant type (R-454B or R-32) and whether A2L mitigation sensor is OEM-included or add-on"
+      ]
+    },
+    {
+      "blueprint_id": "hvac_4ton_heatpump_2026",
+      "trade_category": "hvac",
+      "project_title": "4-Ton 16–20 SEER2 Central Heat Pump Replacement (R-454B/R-32)",
+      "applicable_home_size_sqft": "2,000 - 2,800 sq.ft.",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Standard Efficiency (14.3 - 15.2 SEER2 Single-Stage)",
+          "representative_brands_models": [
+            "Goodman GLZS4BA4810 / matched air handler (R-32)",
+            "Carrier Comfort 4-Ton 14.3 SEER2 R-454B matched system"
+          ],
+          "wholesale_bom_low_usd": 3000,
+          "wholesale_bom_high_usd": 3900,
+          "installed_fair_national_low_usd": 7500,
+          "installed_fair_national_high_usd": 10200
+        },
+        "better": {
+          "tier_name": "Mid-High Efficiency (16 - 18 SEER2 Two-Stage / Inverter)",
+          "representative_brands_models": [
+            "Goodman GZV7 / Daikin Fit 4-Ton inverter class",
+            "Bosch IDS 4-Ton matched system",
+            "Rheem/Ruud Endeavor 4-Ton two-stage R-454B"
+          ],
+          "wholesale_bom_low_usd": 4200,
+          "wholesale_bom_high_usd": 5800,
+          "installed_fair_national_low_usd": 10500,
+          "installed_fair_national_high_usd": 14500
+        },
+        "best": {
+          "tier_name": "Variable-Speed Flagship (19–20+ SEER2 Communicating)",
+          "representative_brands_models": [
+            "Carrier Infinity 4-Ton communicating heat pump + Infinity furnace/AH",
+            "Trane XV20i 4-Ton",
+            "Lennox SL25VP / Signature series class"
+          ],
+          "wholesale_bom_low_usd": 6500,
+          "wholesale_bom_high_usd": 8800,
+          "installed_fair_national_low_usd": 15000,
+          "installed_fair_national_high_usd": 20500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 10,
+        "hours_high": 16,
+        "typical_permit_and_inspection_usd": [
+          200,
+          550
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "A2L Sensor / RDS Kit Sold as High-Margin Add-On",
+          "typical_contractor_charge_usd": 1600,
+          "actual_wholesale_cost_usd": 190,
+          "fair_installed_addon_usd": 380,
+          "evidence_level": "E2",
+          "source_note": "Same SupplyHouse ICM-UA2L-24C-DUAL $219.11 and ACiQ A2L4SA ~$190 retail anchors as 3-ton blueprint. Wholesale_Estimate ≈ retail×0.80 when only retail visible."
+        },
+        {
+          "trap_name": "Electrical 'New Dedicated Circuit Required' When 40A Already Present",
+          "typical_contractor_charge_usd": 2200,
+          "actual_wholesale_cost_usd": 180,
+          "fair_installed_addon_usd": 650,
+          "evidence_level": "E2",
+          "source_note": "4-Ton outdoor units typically need 30–50A 240V. If existing disconnect/breaker already sized correctly, a $2k 'new circuit' line is padding. Materials (breaker + whip + disconnect) retail ~$150–$350 at Home Depot / supply house."
+        },
+        {
+          "trap_name": "Oversizing Without Manual J (4-Ton Sold Into 3-Ton Load)",
+          "typical_contractor_charge_usd": 2500,
+          "actual_wholesale_cost_usd": 0,
+          "fair_installed_addon_usd": 0,
+          "evidence_level": "E3",
+          "source_note": "Public HVAC advice communities repeatedly flag rule-of-thumb oversizing that raises equipment price tier without comfort benefit. Demand AHRI-matched Manual J before accepting 4-Ton."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must provide AHRI Certificate Reference Number for the exact outdoor+indoor match",
+        "Must attach Manual J (and Manual D if ducts modified)",
+        "Must include mechanical permit + inspection",
+        "Must state SEER2 / HSPF2 rated values for the installed match — not catalog max",
+        "Must disclose refrigerant type and A2L mitigation inclusion"
+      ]
+    },
+    {
+      "blueprint_id": "hvac_furnace_80_96_2026",
+      "trade_category": "hvac",
+      "project_title": "Gas Furnace Replacement (Typical 80% AFUE → 96% AFUE High-Efficiency)",
+      "applicable_home_size_sqft": "1,400 - 2,600 sq.ft. (60k–100k BTU input class)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "80% AFUE Single-Stage Replacement (like-for-like)",
+          "representative_brands_models": [
+            "Goodman GM9S80 / comparable 80% single-stage",
+            "Carrier Comfort 59SC / Bryant Legacy 80%"
+          ],
+          "wholesale_bom_low_usd": 1100,
+          "wholesale_bom_high_usd": 1700,
+          "installed_fair_national_low_usd": 3200,
+          "installed_fair_national_high_usd": 4800
+        },
+        "better": {
+          "tier_name": "96% AFUE Single-Stage / Multi-Speed ECM",
+          "representative_brands_models": [
+            "Goodman GR9S960803BN 80k BTU 96% AFUE (HVACDirect ~$1,986; SupplyHouse ~$2,008)",
+            "Goodman GR9S960804CN 80k C-cabinet (~$2,188–$2,216 retail)",
+            "Carrier Performance 96% / Rheem R96V class"
+          ],
+          "wholesale_bom_low_usd": 1600,
+          "wholesale_bom_high_usd": 2400,
+          "installed_fair_national_low_usd": 4500,
+          "installed_fair_national_high_usd": 6800
+        },
+        "best": {
+          "tier_name": "96–98% AFUE Two-Stage / Modulating Communicating",
+          "representative_brands_models": [
+            "Carrier Infinity 98% modulating",
+            "Trane S9V2-VS / XC95m class",
+            "Lennox SLP99V"
+          ],
+          "wholesale_bom_low_usd": 2800,
+          "wholesale_bom_high_usd": 4200,
+          "installed_fair_national_low_usd": 7200,
+          "installed_fair_national_high_usd": 10500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 6,
+        "hours_high": 12,
+        "typical_permit_and_inspection_usd": [
+          100,
+          350
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Mandatory PVC Vent 'Complete Rerun' When Existing Category IV Path Is Valid",
+          "typical_contractor_charge_usd": 2800,
+          "actual_wholesale_cost_usd": 220,
+          "fair_installed_addon_usd": 900,
+          "evidence_level": "E2",
+          "source_note": "80%→96% requires PVC combustion-air/exhaust. Materials (Schedule 40 PVC, fittings, terminations) typically $150–$350 at supply house. A $2,500–$3,500 'full vent redesign' without photos of non-compliant pitch/length is often padding."
+        },
+        {
+          "trap_name": "Coil / TXV 'Must Replace' Bundled Without Diagnosis",
+          "typical_contractor_charge_usd": 2200,
+          "actual_wholesale_cost_usd": 450,
+          "fair_installed_addon_usd": 950,
+          "evidence_level": "E2",
+          "source_note": "When furnace-only swap keeps matched AC coil, forcing a new evaporator coil + TXV without leak/match failure evidence pads the ticket. Coil retail often $500–$900; wholesale ≈ ×0.80."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must state AFUE rating of installed furnace and input/output BTU",
+        "Must include gas permit / mechanical permit as required by AHJ",
+        "Must confirm combustion-air and venting meet manufacturer Category IV instructions",
+        "Must include start-up combustion analysis / CO check documentation",
+        "Must register manufacturer warranty within required window"
+      ]
+    },
+    {
+      "blueprint_id": "hvac_minisplit_2zone_2026",
+      "trade_category": "hvac",
+      "project_title": "Ductless Mini-Split Multi-Zone Heat Pump (2-Zone)",
+      "applicable_home_size_sqft": "Two rooms totaling ~600 - 1,400 sq.ft. (or whole-home supplement)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "DIY / Value Multi-Zone (18k–27k outdoor)",
+          "representative_brands_models": [
+            "MRCOOL DIY 5th Gen 2-Zone 18k (9k+9k) — $3,104 retail at mrcooldiydirect.com",
+            "MRCOOL DIY 2-Zone 27k (12k+12k) — $3,971 retail"
+          ],
+          "wholesale_bom_low_usd": 2400,
+          "wholesale_bom_high_usd": 3400,
+          "installed_fair_national_low_usd": 4500,
+          "installed_fair_national_high_usd": 7200
+        },
+        "better": {
+          "tier_name": "Pro Mid-Tier Multi-Zone (Daikin / Gree / Pioneer class)",
+          "representative_brands_models": [
+            "Daikin MXS / 2-zone wall-mount class",
+            "Gree Multi Sapphire / comparable 2-zone",
+            "MRCOOL DIY 36k 2-zone bundles ($4,500–$4,900 retail)"
+          ],
+          "wholesale_bom_low_usd": 3200,
+          "wholesale_bom_high_usd": 4800,
+          "installed_fair_national_low_usd": 6500,
+          "installed_fair_national_high_usd": 9800
+        },
+        "best": {
+          "tier_name": "Premium Hyper-Heating Multi-Zone (Mitsubishi / Fujitsu)",
+          "representative_brands_models": [
+            "Mitsubishi MXZ-3D24NL + MSZ-GX12NL ×2 (~$6,072 retail system listing at HVAC365)",
+            "Mitsubishi H2i multi-zone 2-indoor class",
+            "Fujitsu Halcyon multi-zone"
+          ],
+          "wholesale_bom_low_usd": 4800,
+          "wholesale_bom_high_usd": 7200,
+          "installed_fair_national_low_usd": 9500,
+          "installed_fair_national_high_usd": 14500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 8,
+        "hours_high": 16,
+        "typical_permit_and_inspection_usd": [
+          100,
+          400
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Line-Set 'Specialty Brazing Package' on Flare/DIY Quick-Connect Systems",
+          "typical_contractor_charge_usd": 1400,
+          "actual_wholesale_cost_usd": 80,
+          "fair_installed_addon_usd": 350,
+          "evidence_level": "E2",
+          "source_note": "MRCOOL DIY pre-charged line sets do not need field brazing. Charging a full braze/nitrogen package on a flare system is padding. Fair vacuum + electrical + mounting labor still required for permitted pro installs."
+        },
+        {
+          "trap_name": "Per-Head 'Communication Kit / Adapter' Mystery Fees",
+          "typical_contractor_charge_usd": 900,
+          "actual_wholesale_cost_usd": 60,
+          "fair_installed_addon_usd": 150,
+          "evidence_level": "E2",
+          "source_note": "Unless a branch-box or unusual control adapter is truly required by the OEM submittal, $600–$1,000 per head 'communication kits' are frequently undocumented padding. Demand OEM part numbers on the quote."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must list outdoor model + each indoor head model and BTU",
+        "Must include line-set length allowance and state rate for extra feet",
+        "Must include electrical disconnect / dedicated circuit scope",
+        "Must include vacuum to ≤500 microns (or OEM spec) with documented gauge reading",
+        "Must include permit if AHJ requires mechanical permit for ductless"
+      ]
+    },
+    {
+      "blueprint_id": "elec_panel_100_to_200a_2026",
+      "trade_category": "electrical",
+      "project_title": "100A → 200A Main Service Panel Upgrade (Residential)",
+      "applicable_home_size_sqft": "1,200 - 3,500 sq.ft. single-family (electrification / EV / heat-pump ready)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Value Load Center Swap (Homeline / Siemens PN) — panel only, meter reuse",
+          "representative_brands_models": [
+            "Square D Homeline HOM4080M200PCVP — $273.62 Home Depot (40-space value pack)",
+            "Siemens PN4040B1200C — $300.62 Home Depot"
+          ],
+          "wholesale_bom_low_usd": 450,
+          "wholesale_bom_high_usd": 900,
+          "installed_fair_national_low_usd": 2200,
+          "installed_fair_national_high_usd": 4200
+        },
+        "better": {
+          "tier_name": "Premium Breaker Family (Square D QO / Eaton CH) + partial service entrance",
+          "representative_brands_models": [
+            "Square D QO 200A 42-space value pack — $346.00 Home Depot",
+            "Eaton CH 200A load center class"
+          ],
+          "wholesale_bom_low_usd": 800,
+          "wholesale_bom_high_usd": 1600,
+          "installed_fair_national_low_usd": 3500,
+          "installed_fair_national_high_usd": 6500
+        },
+        "best": {
+          "tier_name": "Full Service Upgrade (new meter base + SE cable + 200A panel + AFCI/GFCI refresh)",
+          "representative_brands_models": [
+            "Square D QO 200A + utility-approved meter base + 4/0 Al SE",
+            "Siemens / Eaton equivalent full service package"
+          ],
+          "wholesale_bom_low_usd": 1500,
+          "wholesale_bom_high_usd": 2800,
+          "installed_fair_national_low_usd": 5000,
+          "installed_fair_national_high_usd": 9000
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 6,
+        "hours_high": 12,
+        "typical_permit_and_inspection_usd": [
+          100,
+          450
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Every Branch Breaker Replaced With AFCI When Not Code-Required on Existing Circuits",
+          "typical_contractor_charge_usd": 2800,
+          "actual_wholesale_cost_usd": 600,
+          "fair_installed_addon_usd": 1100,
+          "evidence_level": "E2",
+          "source_note": "NEC AFCI/GFCI expansion depends on AHJ adoption and whether circuits are modified. Blanket $80–$120× every breaker without citing local amendment is common padding. Homeline AFCI retail often $40–$55; wholesale ≈ ×0.80."
+        },
+        {
+          "trap_name": "Utility 'Coordination Fee' Inflated Beyond Actual Utility Charge",
+          "typical_contractor_charge_usd": 1500,
+          "actual_wholesale_cost_usd": 0,
+          "fair_installed_addon_usd": 250,
+          "evidence_level": "E3",
+          "source_note": "Public electrician forums (r/AskElectricians) and contractor quote breakdowns show utility disconnect/reconnect fees are often $0–$300 pass-through. A opaque $1,000–$2,000 'utility coordination' line without a utility invoice is a red flag."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must state whether meter base / service entrance conductors are included or excluded",
+        "Must include electrical permit and inspection",
+        "Must list panel brand/model and main breaker ampacity",
+        "Must clarify AFCI/GFCI breaker scope (which circuits, unit prices)",
+        "Must coordinate utility disconnect/reconnect and disclose any utility fees at cost"
+      ]
+    },
+    {
+      "blueprint_id": "elec_spd_whole_home_2026",
+      "trade_category": "electrical",
+      "project_title": "NEC Whole-Home Surge Protective Device (Type 1 / Type 2 SPD)",
+      "applicable_home_size_sqft": "Any single-family service (100A–400A)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Type 2 Plug-On / Compact Panel SPD (25–50 kA)",
+          "representative_brands_models": [
+            "Square D HOM2175SB Plug-On Neutral SPD — $102.00 Home Depot",
+            "Square D HEPD50 — $104.00 Home Depot"
+          ],
+          "wholesale_bom_low_usd": 70,
+          "wholesale_bom_high_usd": 120,
+          "installed_fair_national_low_usd": 250,
+          "installed_fair_national_high_usd": 450
+        },
+        "better": {
+          "tier_name": "Type 1 Universal Whole-Home 80 kA",
+          "representative_brands_models": [
+            "Square D HEPD80 — $142.80 Home Depot (Type 1, 80 kA, NEMA 4X)",
+            "Siemens / Eaton 80 kA Type 1 equivalents"
+          ],
+          "wholesale_bom_low_usd": 110,
+          "wholesale_bom_high_usd": 180,
+          "installed_fair_national_low_usd": 350,
+          "installed_fair_national_high_usd": 650
+        },
+        "best": {
+          "tier_name": "Layered Protection (Service SPD + Subpanel SPD + critical point-of-use)",
+          "representative_brands_models": [
+            "HEPD80 at service + secondary SPD at subpanel",
+            "MidNite / industrial Type 1 for outbuildings when applicable"
+          ],
+          "wholesale_bom_low_usd": 220,
+          "wholesale_bom_high_usd": 450,
+          "installed_fair_national_low_usd": 650,
+          "installed_fair_national_high_usd": 1200
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 1,
+        "hours_low": 1,
+        "hours_high": 3,
+        "typical_permit_and_inspection_usd": [
+          0,
+          150
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "SPD Bundled Into Panel Upgrade at $1,200–$2,000 With No Model Listed",
+          "typical_contractor_charge_usd": 1500,
+          "actual_wholesale_cost_usd": 115,
+          "fair_installed_addon_usd": 400,
+          "evidence_level": "E2",
+          "source_note": "HEPD80 retail $142.80; Homeline plug-on $102. Fair installed add-on with labor typically $350–$650. Opaque $1,500 SPD lines are classic panel-upgrade padding. https://www.homedepot.com/p/Square-D-80kA-Universal-Whole-Home-Surge-Protection-Device-HEPD80-HEPD80/203540660"
+        },
+        {
+          "trap_name": "Selling Point-of-Use Strip Warranty as if It Were Type 1 Service Protection",
+          "typical_contractor_charge_usd": 800,
+          "actual_wholesale_cost_usd": 40,
+          "fair_installed_addon_usd": 120,
+          "evidence_level": "E2",
+          "source_note": "NEC 2020+ dwelling SPD requirement is for Type 1 or Type 2 at the service/feeder — not plug strips. Verify UL 1449 Type listing on the proposal."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must specify UL 1449 Type (1 or 2), kA rating, and exact model number",
+        "Must state install location (line-side Type 1 vs load-side Type 2 / breaker)",
+        "Must include any required breaker for Type 2 installs",
+        "Must note warranty (e.g., HEPD80 5-year / $75,000 connected equipment) in writing"
+      ]
+    },
+    {
+      "blueprint_id": "elec_evse_level2_2026",
+      "trade_category": "electrical",
+      "project_title": "Level 2 EV Charger Circuit + Install (≤48A Continuous / 60A Breaker Typical)",
+      "applicable_home_size_sqft": "Garage or driveway parking with 200A-capable service preferred",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Circuit Only to NEMA 14-50 / 6-50 (homeowner supplies EVSE)",
+          "representative_brands_models": [
+            "60A 2-pole breaker + 6 AWG Cu + NEMA 14-50 receptacle",
+            "Emporia / budget hardwired EVSE if bundled (~$300–$450 retail)"
+          ],
+          "wholesale_bom_low_usd": 180,
+          "wholesale_bom_high_usd": 450,
+          "installed_fair_national_low_usd": 800,
+          "installed_fair_national_high_usd": 1600
+        },
+        "better": {
+          "tier_name": "Hardwired Smart Level 2 EVSE ≤48A",
+          "representative_brands_models": [
+            "ChargePoint Home Flex Hardwired — $549 retail (utility marketplaces)",
+            "Wallbox Pulsar Plus 48A — $699.99 shop.wallbox.com"
+          ],
+          "wholesale_bom_low_usd": 450,
+          "wholesale_bom_high_usd": 850,
+          "installed_fair_national_low_usd": 1400,
+          "installed_fair_national_high_usd": 2800
+        },
+        "best": {
+          "tier_name": "EVSE + Load Management / Panel Capacity Work",
+          "representative_brands_models": [
+            "Wallbox Pulsar Plus 48A + Power Meter / DLM",
+            "ChargePoint Home Flex + panel spaces / subfeed as needed",
+            "Tesla Wall Connector Gen 3 / Universal Wall Connector class"
+          ],
+          "wholesale_bom_low_usd": 700,
+          "wholesale_bom_high_usd": 1400,
+          "installed_fair_national_low_usd": 2200,
+          "installed_fair_national_high_usd": 4500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 1,
+        "hours_low": 3,
+        "hours_high": 8,
+        "typical_permit_and_inspection_usd": [
+          50,
+          250
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Forced 200A Panel Upgrade When Load Calc Shows Capacity",
+          "typical_contractor_charge_usd": 5500,
+          "actual_wholesale_cost_usd": 0,
+          "fair_installed_addon_usd": 0,
+          "evidence_level": "E3",
+          "source_note": "NEC Article 220 load calculation (or energy-management systems under 625.42) often allows Level 2 on existing 100–150A services. Demand a written load calc before accepting a bundled $5k–$8k panel upgrade."
+        },
+        {
+          "trap_name": "EVSE Equipment Marked Up 2–3× Over Retail With No Model Disclosed",
+          "typical_contractor_charge_usd": 1800,
+          "actual_wholesale_cost_usd": 440,
+          "fair_installed_addon_usd": 750,
+          "evidence_level": "E2",
+          "source_note": "ChargePoint Home Flex HW $549 retail; Wallbox Pulsar Plus 48A $699.99. Fair equipment = wholesale×1.35 ≈ $590–$945 for these units. A $1,800 'charger' line without model number is padding. https://shop.wallbox.com/products/pulsar-plus"
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must specify EVSE brand/model, max amperage, hardwired vs plug-in",
+        "Must include breaker size, conductor size/type, and run length",
+        "Must state whether NEC load calculation or EMS is used to justify service capacity",
+        "Must include electrical permit/inspection",
+        "Must note any utility EVSE rebate assignment / paperwork responsibility"
+      ]
+    },
+    {
+      "blueprint_id": "elec_generator_transfer_2026",
+      "trade_category": "electrical",
+      "project_title": "Standby Generator Transfer Switch / Interlock Kit Path (Transfer Gear Only)",
+      "applicable_home_size_sqft": "Whole-home or essential-loads backup (generator equipment priced separately)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Manual Interlock Kit + Inlet (portable generator path)",
+          "representative_brands_models": [
+            "Westinghouse / Generac / Eaton panel interlock kits — ~$60–$120 Home Depot class",
+            "30A or 50A power inlet box + flanged inlet"
+          ],
+          "wholesale_bom_low_usd": 80,
+          "wholesale_bom_high_usd": 220,
+          "installed_fair_national_low_usd": 350,
+          "installed_fair_national_high_usd": 900
+        },
+        "better": {
+          "tier_name": "Manual / Essential-Loads Transfer Switch (6–10 circuits)",
+          "representative_brands_models": [
+            "Reliance Controls / GenTran 6–10 circuit manual transfer switches",
+            "Generac manual transfer options"
+          ],
+          "wholesale_bom_low_usd": 350,
+          "wholesale_bom_high_usd": 700,
+          "installed_fair_national_low_usd": 1200,
+          "installed_fair_national_high_usd": 2400
+        },
+        "best": {
+          "tier_name": "200A Automatic Transfer Switch (standby generator)",
+          "representative_brands_models": [
+            "Generac 200A service-entrance ATS — ~$919–$1,039 Home Depot listings",
+            "Generac Next Gen 200A ATS with integrated SPD (~$1,039)",
+            "Kohler / Briggs & Stratton 200A ATS class"
+          ],
+          "wholesale_bom_low_usd": 750,
+          "wholesale_bom_high_usd": 1400,
+          "installed_fair_national_low_usd": 2200,
+          "installed_fair_national_high_usd": 4500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 4,
+        "hours_high": 10,
+        "typical_permit_and_inspection_usd": [
+          80,
+          350
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Interlock Kit Job Quoted as Full Automatic Transfer Switch Price",
+          "typical_contractor_charge_usd": 3200,
+          "actual_wholesale_cost_usd": 90,
+          "fair_installed_addon_usd": 650,
+          "evidence_level": "E2",
+          "source_note": "Interlock kits retail ~$60–$120; fair installed with inlet often $350–$900. Quoting $3,000+ without an automatic transfer switch model number is a bait-and-switch pattern. https://www.homedepot.com/b/Outdoors-Outdoor-Power-Equipment-Outdoor-Power-Equipment-Parts-Generator-Parts-Generator-Transfer-Switches/Generac/N-5yc1vZc7l9Z4ph"
+        },
+        {
+          "trap_name": "ATS Price Includes Generator That Is Separately Bid / Not Delivered",
+          "typical_contractor_charge_usd": 8000,
+          "actual_wholesale_cost_usd": 900,
+          "fair_installed_addon_usd": 2800,
+          "evidence_level": "E2",
+          "source_note": "This blueprint covers transfer gear only. Demand separate line items for generator pad, gas/electric hookup, ATS, and startup. Generac 200A ATS retail ~$919–$1,039 — not $5k+ by itself."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must distinguish interlock vs manual transfer vs automatic transfer switch by model number",
+        "Must state whether service-entrance rated ATS is used (meter/main implications)",
+        "Must include electrical permit and inspection",
+        "Must exclude or separately price the generator, pad, and fuel connection",
+        "Must confirm neutral bonding / grounding scheme for separately derived vs non-separately derived systems"
+      ]
+    },
+    {
+      "blueprint_id": "plumb_wh_50gal_tank_2026",
+      "trade_category": "plumbing",
+      "project_title": "50-Gallon Conventional Tank Water Heater Replacement (Electric or Gas)",
+      "applicable_home_size_sqft": "1,200 - 2,800 sq.ft. (3–5 person household)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Standard Electric 50-Gal (6-Year Warranty)",
+          "representative_brands_models": [
+            "Rheem Performance XE50M06ST45U1 50-Gal Electric (~$569 HD retail Oct 2026)",
+            "AO Smith / GE comparable 50-Gal electric tall/medium"
+          ],
+          "wholesale_bom_low_usd": 450,
+          "wholesale_bom_high_usd": 700,
+          "installed_fair_national_low_usd": 1600,
+          "installed_fair_national_high_usd": 2800
+        },
+        "better": {
+          "tier_name": "Gas 50-Gal Bradford White / Rheem Performance Plus (6–9 Year)",
+          "representative_brands_models": [
+            "Bradford White RG250T6N / similar plumber-channel gas 50-Gal (~$850–$1,100 equip)",
+            "Rheem Performance Plus gas 50-Gal with 9-year tank warranty"
+          ],
+          "wholesale_bom_low_usd": 700,
+          "wholesale_bom_high_usd": 1100,
+          "installed_fair_national_low_usd": 2200,
+          "installed_fair_national_high_usd": 3600
+        },
+        "best": {
+          "tier_name": "Premium Leak-Detection Tank (10–12 Year / Smart)",
+          "representative_brands_models": [
+            "Rheem Gladiator 55-Gal Smart Electric with LeakGuard (~$889 HD retail)",
+            "Bradford White Defender / AeroSmart-class longer-warranty gas tank"
+          ],
+          "wholesale_bom_low_usd": 900,
+          "wholesale_bom_high_usd": 1400,
+          "installed_fair_national_low_usd": 2800,
+          "installed_fair_national_high_usd": 4500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 3,
+        "hours_high": 6,
+        "typical_permit_and_inspection_usd": [
+          50,
+          160
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Thermal Expansion Tank Mandatory Code Upgrade Gouging",
+          "typical_contractor_charge_usd": 650,
+          "actual_wholesale_cost_usd": 45,
+          "fair_installed_addon_usd": 175,
+          "evidence_level": "E2",
+          "source_note": "Expansion tanks retail ~$35–$70 at big-box; plumber wholesale ~$30–$50. Closed-system code may require one, but $500–$800 installed for a tank swap add-on is padding. Fair installed addon ~$120–$220. https://www.reddit.com/r/askaplumber/comments/1edqbhs/water_heater_charge/"
+        },
+        {
+          "trap_name": "Pan + Drain Line + Seismic Straps Bundled as Emergency Package",
+          "typical_contractor_charge_usd": 900,
+          "actual_wholesale_cost_usd": 85,
+          "fair_installed_addon_usd": 280,
+          "evidence_level": "E2",
+          "source_note": "Plastic WH pan ~$25–$45, T&P drain ~$15–$40, seismic straps kit ~$20–$40 retail. Charging $700–$1,000 as a same-day emergency package when existing pan/straps are reusable is padding. Fair if truly new: $200–$350 installed."
+        },
+        {
+          "trap_name": "Haul-Away / Disposal Fee Inflation",
+          "typical_contractor_charge_usd": 350,
+          "actual_wholesale_cost_usd": 25,
+          "fair_installed_addon_usd": 95,
+          "evidence_level": "E3",
+          "source_note": "Scrap steel tanks often have residual value; municipal dump fees for one tank are typically <$50. Public plumber forums note $75–$125 fair haul-away vs $250–$400 quote lines. https://www.reddit.com/r/askaplumber/comments/1edqbhs/water_heater_charge/"
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must list exact manufacturer, model, gallon capacity, fuel type, and UEF on the invoice",
+        "Must include municipal plumbing permit and final inspection fee (itemized)",
+        "Must disclose whether expansion tank, drip pan, T&P drain, and seismic straps are new or reused",
+        "Must register manufacturer tank/parts warranty within required window and provide registration confirmation",
+        "Must haul away old unit or credit scrap if homeowner keeps it — no hidden disposal after signing"
+      ]
+    },
+    {
+      "blueprint_id": "plumb_wh_hpwh_50_2026",
+      "trade_category": "plumbing",
+      "project_title": "50-Gallon Heat Pump Water Heater (HPWH / Hybrid) Replacement",
+      "applicable_home_size_sqft": "1,400 - 3,000 sq.ft. with suitable install location (garage/basement/utility ≥700–1,000 cu.ft. air volume preferred)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Standard Hybrid HPWH 50-Gal (UEF ~3.5–3.8)",
+          "representative_brands_models": [
+            "Rheem ProTerra XE50T10HS45U1 50-Gal Smart Hybrid (~$1,950 HD retail; sale observations ~$1,372)",
+            "AO Smith Voltex / GE GeoSpring-class 50-Gal hybrid"
+          ],
+          "wholesale_bom_low_usd": 1400,
+          "wholesale_bom_high_usd": 1900,
+          "installed_fair_national_low_usd": 3200,
+          "installed_fair_national_high_usd": 4800
+        },
+        "better": {
+          "tier_name": "Premium Hybrid with LeakGuard / Wi-Fi (10-Year)",
+          "representative_brands_models": [
+            "Rheem ProTerra LeakGuard 50-Gal (HD list ~$1,950)",
+            "Ruud ProTerra / Professional Prestige HPWH (~$2,375.99 SupplyHouse listing)"
+          ],
+          "wholesale_bom_low_usd": 1700,
+          "wholesale_bom_high_usd": 2300,
+          "installed_fair_national_low_usd": 4000,
+          "installed_fair_national_high_usd": 5800
+        },
+        "best": {
+          "tier_name": "HPWH + Condensate Management + Optional Recirc / Demand-Response Ready",
+          "representative_brands_models": [
+            "Rheem / Ruud ProTerra 50–65 Gal with full condensate pump kit and drain",
+            "Bradford White AeroTherm / equivalent utility-rebate-optimized HPWH"
+          ],
+          "wholesale_bom_low_usd": 2100,
+          "wholesale_bom_high_usd": 2900,
+          "installed_fair_national_low_usd": 5000,
+          "installed_fair_national_high_usd": 7500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 4,
+        "hours_high": 8,
+        "typical_permit_and_inspection_usd": [
+          55,
+          200
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Dedicated 30A Circuit Required Upgrade When Existing 240V Is Adequate",
+          "typical_contractor_charge_usd": 1800,
+          "actual_wholesale_cost_usd": 120,
+          "fair_installed_addon_usd": 550,
+          "evidence_level": "E2",
+          "source_note": "Most 50-Gal HPWH units need 208/240V 30A; if a compliant circuit already exists from the old electric tank, a full new-circuit line at $1,500–$2,200 is padding. Fair new-circuit addon ~$400–$700. https://www.homedepot.com/p/Rheem-ProTerra-50-Gal-Smart-High-Efficiency-Hybrid-Heat-Pump-Water-Heater-w-Leak-Detection-Auto-Shutoff-10-Year-Warranty-XE50T10HS45U1/330317248"
+        },
+        {
+          "trap_name": "Condensate Pump + Climate Kit Inflated Bundle",
+          "typical_contractor_charge_usd": 950,
+          "actual_wholesale_cost_usd": 110,
+          "fair_installed_addon_usd": 320,
+          "evidence_level": "E2",
+          "source_note": "Condensate pumps retail ~$60–$150; freeze-protection kits vary. Charging ~$900–$1,200 when gravity drain is available is padding. Fair installed condensate pump addon ~$250–$400."
+        },
+        {
+          "trap_name": "IRA / Utility Rebate Processing Fee Withheld From Homeowner",
+          "typical_contractor_charge_usd": 800,
+          "actual_wholesale_cost_usd": 0,
+          "fair_installed_addon_usd": 0,
+          "evidence_level": "E4",
+          "source_note": "Federal 25C / utility HPWH rebates belong to the homeowner unless a written assignment exists. A vague $500–$1,000 rebate processing line that never appears as a credit is a commercial practice trap."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must confirm install location meets manufacturer clearances and air-volume requirements in writing",
+        "Must itemize whether a new 240V circuit is required or existing circuit is reused",
+        "Must include condensate disposal method (gravity vs pump) and who owns freeze risk",
+        "Must list expected UEF, warranty years, and who files utility / IRA 25C rebate paperwork",
+        "Must include plumbing permit and any electrical permit if circuit work is in scope"
+      ]
+    },
+    {
+      "blueprint_id": "plumb_tankless_gas_2026",
+      "trade_category": "plumbing",
+      "project_title": "Tankless Gas Water Heater Retrofit (Condensing, Whole-Home)",
+      "applicable_home_size_sqft": "1,400 - 3,200 sq.ft. (2–4 baths; verify gas line BTU capacity)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "Condensing 7–9 GPM Non-Recirc (Indoor)",
+          "representative_brands_models": [
+            "Rinnai Sensei RX160 / RX180 class",
+            "Rheem IKONIC mid-GPM condensing (~$1,529–$1,700 HD retail class)"
+          ],
+          "wholesale_bom_low_usd": 1100,
+          "wholesale_bom_high_usd": 1600,
+          "installed_fair_national_low_usd": 3500,
+          "installed_fair_national_high_usd": 5500
+        },
+        "better": {
+          "tier_name": "Condensing 10–11 GPM with Isolation Valves (Rinnai / Navien)",
+          "representative_brands_models": [
+            "Rinnai Sensei RX199iN 11.1 GPM 199k BTU (~$1,532.79 HD Oct 2026)",
+            "Navien NPE-240A2 (~$1,884–$2,099 public retail listings)"
+          ],
+          "wholesale_bom_low_usd": 1400,
+          "wholesale_bom_high_usd": 2100,
+          "installed_fair_national_low_usd": 4500,
+          "installed_fair_national_high_usd": 7200
+        },
+        "best": {
+          "tier_name": "Premium Condensing + Recirc Pump / Smart Module + Gas Upsize",
+          "representative_brands_models": [
+            "Rinnai RX199iN + recirculation pump kit + Wi-Fi module RWM200",
+            "Navien NPE-240A2 with ComfortFlow recirculation"
+          ],
+          "wholesale_bom_low_usd": 1900,
+          "wholesale_bom_high_usd": 3000,
+          "installed_fair_national_low_usd": 6000,
+          "installed_fair_national_high_usd": 9500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 6,
+        "hours_high": 14,
+        "typical_permit_and_inspection_usd": [
+          75,
+          250
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "PVC / Polypropylene Vent Kit Marked Up as Specialty Exhaust System",
+          "typical_contractor_charge_usd": 2200,
+          "actual_wholesale_cost_usd": 280,
+          "fair_installed_addon_usd": 750,
+          "evidence_level": "E2",
+          "source_note": "Condensing tankless units typically use 2–3 in. PVC/PP vent. Kit + fittings wholesale often $150–$400. $1,800–$2,500 specialty vent lines are padding when Schedule 40 PVC is approved. https://www.homedepot.com/p/Rinnai-Sensei-Super-High-Efficiency-Plus-11-GPM-199-000-BTU-Natural-Gas-Propane-Indoor-Outdoor-Tankless-Water-Heater-RX199iN/329104960"
+        },
+        {
+          "trap_name": "Gas Line Upsize Charged Without Load Calc or Utility Confirmation",
+          "typical_contractor_charge_usd": 1800,
+          "actual_wholesale_cost_usd": 180,
+          "fair_installed_addon_usd": 650,
+          "evidence_level": "E3",
+          "source_note": "Many homes need 3/4 in. gas to the unit; if existing line is already adequate, a $1,500–$2,500 upsize is unnecessary. Demand BTU load calc + pipe size worksheet. Fair when truly needed: materials ~$100–$250 + 3–5 labor hrs."
+        },
+        {
+          "trap_name": "Isolation / Service Valve Kit Sold as Proprietary Maintenance Package",
+          "typical_contractor_charge_usd": 650,
+          "actual_wholesale_cost_usd": 75,
+          "fair_installed_addon_usd": 220,
+          "evidence_level": "E2",
+          "source_note": "Service valve sets (e.g. Rinnai MIVK-class / Easyflex brass) retail roughly $80–$180. Fair installed ~$180–$280. Charging $500–$800 as a mandatory proprietary kit is padding."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must specify indoor vs outdoor model, NG vs LP, max GPM at stated rise, and UEF",
+        "Must include gas-line sizing worksheet (BTU load) and whether upsizing is in scope",
+        "Must itemize vent material, diameter, equivalent length, and termination type",
+        "Must include isolation/service valves and condensate disposal in base price or as clear options",
+        "Must pull plumbing (+ mechanical if required) permit and register manufacturer warranty"
+      ]
+    },
+    {
+      "blueprint_id": "plumb_wholehouse_pex_repipe_2026",
+      "trade_category": "plumbing",
+      "project_title": "Whole-House PEX-A Repipe (Typical 2–3 Bath Single-Family)",
+      "applicable_home_size_sqft": "1,400 - 2,400 sq.ft. (2–3 bathrooms; crawlspace/attic access preferred)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "PEX-A Home-Run / Trunk-Branch Crawlspace Access (Uponor or Equal)",
+          "representative_brands_models": [
+            "Uponor AquaPEX 1/2 in. (~$54.45 / 100 ft SupplyHouse Oct 2026) + ProPEX expansion fittings",
+            "Uponor AquaPEX 3/4 in. / 1 in. mains with brass expansion manifolds"
+          ],
+          "wholesale_bom_low_usd": 800,
+          "wholesale_bom_high_usd": 1600,
+          "installed_fair_national_low_usd": 4500,
+          "installed_fair_national_high_usd": 8500
+        },
+        "better": {
+          "tier_name": "Full Uponor PEX-A with Manifold Home-Run + Fixture Cutoffs",
+          "representative_brands_models": [
+            "Uponor AquaPEX colored print coils + ProPEX manifolds",
+            "Viega PureFlow / comparable PEX-A expansion systems"
+          ],
+          "wholesale_bom_low_usd": 1400,
+          "wholesale_bom_high_usd": 2400,
+          "installed_fair_national_low_usd": 6500,
+          "installed_fair_national_high_usd": 11000
+        },
+        "best": {
+          "tier_name": "Slab-Reroute / Complex Access + Drywall Patch Allowance + Water Main Tie-In",
+          "representative_brands_models": [
+            "Uponor AquaPEX full-home attic/wall reroute (no slab cut) + main valve replacement",
+            "Uponor + optional recirculation loop for tankless or remote baths"
+          ],
+          "wholesale_bom_low_usd": 2000,
+          "wholesale_bom_high_usd": 3500,
+          "installed_fair_national_low_usd": 8500,
+          "installed_fair_national_high_usd": 14500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 24,
+        "hours_high": 48,
+        "typical_permit_and_inspection_usd": [
+          100,
+          400
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Per-Fixture Access Fee Stacked on Top of Day-Rate Labor",
+          "typical_contractor_charge_usd": 3500,
+          "actual_wholesale_cost_usd": 0,
+          "fair_installed_addon_usd": 800,
+          "evidence_level": "E3",
+          "source_note": "Public 2026 repipe cost guides put labor at ~70% of job; double-billing a $200–$400 per-fixture access on every sink/shower ON TOP of multi-day crew rates inflates totals $2k–$4k. Fair: either day-rate crew OR per-fixture — not both. https://www.geekpoweredstudios.com/post/whole-home-repipe-cost-guide-2026"
+        },
+        {
+          "trap_name": "Push-to-Connect Fitting Premium Forced as Only Code-Legal Method",
+          "typical_contractor_charge_usd": 2200,
+          "actual_wholesale_cost_usd": 400,
+          "fair_installed_addon_usd": 900,
+          "evidence_level": "E2",
+          "source_note": "Uponor ProPEX expansion fittings are the Uponor-system standard and cheaper per joint than wholesale push-to-connect. Forcing SharkBite-class push fittings house-wide can add $1,000–$2,500 materials vs expansion. https://www.supplyhouse.com/Uponor-Wirsbo-F4240500-1-2-Uponor-AquaPEX-White-w-Red-Print-100-ft-coil"
+        },
+        {
+          "trap_name": "Drywall / Patch Restoration Package Quoted Blind",
+          "typical_contractor_charge_usd": 4500,
+          "actual_wholesale_cost_usd": 350,
+          "fair_installed_addon_usd": 1500,
+          "evidence_level": "E4",
+          "source_note": "Blind $3k–$5k drywall restoration without a room-by-room patch count is a common padding bucket. Fair: itemize openings or cap patch allowance ($800–$2,000 typical for clean PEX runs) and true-up after inspection."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must specify PEX type (A/B/C), fitting system (expansion/crimp/press), and brand",
+        "Must state foundation type (crawl/attic/slab) and whether slab will be cut or lines rerouted",
+        "Must itemize fixture count, manifold vs trunk-branch design, and water-main tie-in scope",
+        "Must include permit, pressure test, and inspection; define drywall patch allowance separately",
+        "Must warrant workmanship leak-free for a stated period (typically 1–5 years labor) beyond pipe manufacturer warranty"
+      ]
+    },
+    {
+      "blueprint_id": "roof_arch_shingle_2500sqft_2026",
+      "trade_category": "roofing",
+      "project_title": "Architectural Shingle Full Reroof (~2,000–3,000 sq.ft. / ~20–30 squares)",
+      "applicable_home_size_sqft": "2,000 - 3,000 sq.ft. roof area (simple–moderate pitch; one layer tear-off)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "GAF Timberline HDZ / Owens Corning Duration Architectural",
+          "representative_brands_models": [
+            "GAF Timberline HDZ (~$42.97/bundle HD; ~$128.91/sq retail; bulk ~$38.67/bundle)",
+            "Owens Corning TruDefinition Duration (~$42.97/bundle HD)"
+          ],
+          "wholesale_bom_low_usd": 4500,
+          "wholesale_bom_high_usd": 7000,
+          "installed_fair_national_low_usd": 8500,
+          "installed_fair_national_high_usd": 14000
+        },
+        "better": {
+          "tier_name": "Designer Architectural + Full Underlayment System (Ice & Water Eaves)",
+          "representative_brands_models": [
+            "GAF Timberline HDZ / UHDZ with WeatherWatch ice & water + FeltBuster synthetic",
+            "Owens Corning Duration + Total Protection Roofing System components"
+          ],
+          "wholesale_bom_low_usd": 6000,
+          "wholesale_bom_high_usd": 9500,
+          "installed_fair_national_low_usd": 11000,
+          "installed_fair_national_high_usd": 17500
+        },
+        "best": {
+          "tier_name": "Impact-Rated / Premium Laminate + Copper/Step Flash Upgrade + Ridge Vent",
+          "representative_brands_models": [
+            "GAF Timberline AS II / Owens Corning Duration Storm impact-rated class",
+            "Full tear-off, new drip edge all around, pipe boots, chimney step flash, continuous ridge vent"
+          ],
+          "wholesale_bom_low_usd": 8500,
+          "wholesale_bom_high_usd": 13000,
+          "installed_fair_national_low_usd": 15000,
+          "installed_fair_national_high_usd": 24000
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 4,
+        "hours_low": 16,
+        "hours_high": 28,
+        "typical_permit_and_inspection_usd": [
+          80,
+          450
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Gutter Guard Required with New Roof Add-On",
+          "typical_contractor_charge_usd": 4500,
+          "actual_wholesale_cost_usd": 600,
+          "fair_installed_addon_usd": 1800,
+          "evidence_level": "E3",
+          "source_note": "Gutter guards are optional — not required for shingle warranty in most manufacturer specs. $3,500–$6,000 micro-mesh upsells during reroof sales are classic padding; fair installed micro-mesh for a typical SFH often $1,200–$2,500. Folded here because Batch3 deferred a standalone gutter blueprint. https://www.reddit.com/r/Roofing/comments/1erjqjo/got_a_1500_supplemental_charge_on_a_roof/"
+        },
+        {
+          "trap_name": "Ice & Water Shield Whole-Roof When Only Eaves/Valleys Required",
+          "typical_contractor_charge_usd": 3200,
+          "actual_wholesale_cost_usd": 450,
+          "fair_installed_addon_usd": 1100,
+          "evidence_level": "E3",
+          "source_note": "Code/best practice usually requires ice & water at eaves/valleys/penetrations — not always full-roof. Full-deck peel-and-stick can be legitimate in severe ice-dam climates, but a $2,500–$4,000 required line without climate justification is padding. https://www.reddit.com/r/Roofing/comments/15x0d0g/question_ice_and_water_shield/"
+        },
+        {
+          "trap_name": "Decking Replacement Allowance Billed Blind Before Tear-Off",
+          "typical_contractor_charge_usd": 5000,
+          "actual_wholesale_cost_usd": 800,
+          "fair_installed_addon_usd": 1800,
+          "evidence_level": "E3",
+          "source_note": "OSB/plywood ~$25–$45/sheet; fair per-sheet installed often $60–$100. A pre-tearoff $4k–$6k bad deck package without sheet count is a contingency upsell. Demand per-sheet unit price and photo documentation. https://www.reddit.com/r/Roofing/comments/1vt56v4/what_possible_hidden_charges_should_i_look_for_in/"
+        },
+        {
+          "trap_name": "Skylight Must Reflash / Replace Bundled Without Leak Evidence",
+          "typical_contractor_charge_usd": 2800,
+          "actual_wholesale_cost_usd": 350,
+          "fair_installed_addon_usd": 950,
+          "evidence_level": "E4",
+          "source_note": "Re-flashing an intact skylight during reroof is often $600–$1,200 fair; full skylight unit replacement $1,500–$3,500 depending on size/brand. Quoting mandatory replacement on every skylight without moisture evidence is padding — ask for reflash-only option."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must state roof squares (including waste %), layers to tear off, and pitch assumptions",
+        "Must list shingle brand/model, underlayment, ice & water locations, drip edge, ridge, and ventilation",
+        "Must give per-sheet decking replacement unit price (not a blind lump sum)",
+        "Must include permit, dump fees, and magnet nail-sweep; define gutter detach/reset if needed",
+        "Must provide manufacturer enhanced warranty registration path (GAF Golden Pledge / OC system warranties if claimed)"
+      ]
+    },
+    {
+      "blueprint_id": "smart_cat6_wholehome_2026",
+      "trade_category": "smart_home",
+      "project_title": "Whole-Home Cat6 Structured Wiring Retrofit (Existing SFH)",
+      "applicable_home_size_sqft": "1,800 - 3,500 sq.ft. existing construction (8–24 data drops typical)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "8–12 Cat6 Drops + Patch Panel (No Rack Aesthetics)",
+          "representative_brands_models": [
+            "Southwire / generic CMR Cat6 1000 ft bulk (~$190–$195 HD class retail)",
+            "Basic 12–24 port patch panel + keystone jacks + wall plates"
+          ],
+          "wholesale_bom_low_usd": 400,
+          "wholesale_bom_high_usd": 900,
+          "installed_fair_national_low_usd": 2500,
+          "installed_fair_national_high_usd": 4800
+        },
+        "better": {
+          "tier_name": "16–24 Drops + Wall-Mount Rack + Cable Management",
+          "representative_brands_models": [
+            "Solid-copper Cat6 CMR/CMP as required by AHJ (plenum where needed)",
+            "Leviton / ICC structured wiring enclosure or 12U wall rack + labeled patch"
+          ],
+          "wholesale_bom_low_usd": 900,
+          "wholesale_bom_high_usd": 1800,
+          "installed_fair_national_low_usd": 4500,
+          "installed_fair_national_high_usd": 8000
+        },
+        "best": {
+          "tier_name": "Full Structured Media + PoE Camera Runs + Future AP Drops",
+          "representative_brands_models": [
+            "Cat6A selective runs to AP/camera locations + Cat6 elsewhere",
+            "Rack with UPS shelf, patch, and documented as-built drawing"
+          ],
+          "wholesale_bom_low_usd": 1600,
+          "wholesale_bom_high_usd": 3200,
+          "installed_fair_national_low_usd": 7000,
+          "installed_fair_national_high_usd": 12500
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 16,
+        "hours_high": 40,
+        "typical_permit_and_inspection_usd": [
+          0,
+          200
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Per-Drop Pricing at New-Construction Rates on Easy Retrofit Paths",
+          "typical_contractor_charge_usd": 450,
+          "actual_wholesale_cost_usd": 25,
+          "fair_installed_addon_usd": 175,
+          "evidence_level": "E2",
+          "source_note": "Cat6 bulk ~$0.19–$0.25/ft retail (1000 ft ~$190 HD class); materials per indoor drop often <$30. Fair retrofit installed per drop commonly $120–$220 when attic/crawl access is open; $350–$500+ per drop is new-work or fishing-through-finished-walls pricing."
+        },
+        {
+          "trap_name": "Forced Smart Panel / Proprietary Enclosure Upsell",
+          "typical_contractor_charge_usd": 2200,
+          "actual_wholesale_cost_usd": 280,
+          "fair_installed_addon_usd": 650,
+          "evidence_level": "E4",
+          "source_note": "A labeled patch panel in a $100–$400 enclosure is enough for most SFHs. $1,800–$2,500 smart structured media panels with little extra function are margin padding."
+        },
+        {
+          "trap_name": "CCA Copper-Clad Aluminum Cable Passed Off as Solid Copper",
+          "typical_contractor_charge_usd": 0,
+          "actual_wholesale_cost_usd": 0,
+          "fair_installed_addon_usd": 0,
+          "evidence_level": "E3",
+          "source_note": "CCA Cat6 fails PoE and long-run Gigabit reliability. Require written solid bare copper spec and photo of jacket print (e.g. Southwire CMR). Reject unbranded bargain spools."
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must specify solid-copper Cat6/Cat6A, CMR vs CMP rating, and drop count with room map",
+        "Must include certification test results (wiremap + length; prefer Fluke-style PDF) per drop",
+        "Must state patch panel brand/ports, labeling scheme, and whether rack/enclosure is included",
+        "Must disclose fishing method and drywall patch responsibility",
+        "Must exclude low-voltage license/permit requirements if AHJ requires them — contractor pulls them"
+      ]
+    },
+    {
+      "blueprint_id": "smart_unifi_wifi_lutron_2026",
+      "trade_category": "smart_home",
+      "project_title": "UniFi Wi-Fi AP Deploy + Lutron Caséta / RadioRA 3 Whole-Home Lighting Control",
+      "applicable_home_size_sqft": "1,800 - 4,000 sq.ft. (2–5 APs; 10–30 lighting loads)",
+      "design_tiers": {
+        "good": {
+          "tier_name": "UniFi Gateway + 2–3 Wi-Fi 7 APs (No Lighting Control)",
+          "representative_brands_models": [
+            "Ubiquiti Cloud Gateway Ultra (~$129 retail ui.com class) + UniFi U7 Pro AP (~$189 each)",
+            "Optional Lite PoE switch for AP power"
+          ],
+          "wholesale_bom_low_usd": 450,
+          "wholesale_bom_high_usd": 900,
+          "installed_fair_national_low_usd": 1800,
+          "installed_fair_national_high_usd": 3500
+        },
+        "better": {
+          "tier_name": "UniFi Wi-Fi 7 Mesh + Lutron Caséta Whole-Home Dimmers",
+          "representative_brands_models": [
+            "U7 Pro ×3–4 + Cloud Gateway / Dream Machine class + PoE switch",
+            "Lutron Caséta PD-6WCL dimmers (~$64.95 HD each) ×12–20 + Caséta smart hub"
+          ],
+          "wholesale_bom_low_usd": 1400,
+          "wholesale_bom_high_usd": 2800,
+          "installed_fair_national_low_usd": 4500,
+          "installed_fair_national_high_usd": 8500
+        },
+        "best": {
+          "tier_name": "UniFi Pro Stack + Lutron RadioRA 3 / Matter + Optional PoE Cameras",
+          "representative_brands_models": [
+            "UniFi Dream Machine SE (~$499 class) + U7 Pro / Enterprise APs + PoE switch",
+            "Lutron RadioRA 3 processor + dimmers (pro line) or Matter-over-Thread premium dimmers",
+            "Optional UniFi Protect PoE cameras (G5/G6 class) as add-on — not required for lighting/Wi-Fi scope"
+          ],
+          "wholesale_bom_low_usd": 3500,
+          "wholesale_bom_high_usd": 7000,
+          "installed_fair_national_low_usd": 9000,
+          "installed_fair_national_high_usd": 16000
+        }
+      },
+      "standard_labor_allocation": {
+        "crew_size": 2,
+        "hours_low": 12,
+        "hours_high": 36,
+        "typical_permit_and_inspection_usd": [
+          0,
+          250
+        ]
+      },
+      "common_contractor_padding_traps": [
+        {
+          "trap_name": "Consumer Mesh Marked Up as Enterprise UniFi Without UniFi Hardware",
+          "typical_contractor_charge_usd": 3500,
+          "actual_wholesale_cost_usd": 400,
+          "fair_installed_addon_usd": 1200,
+          "evidence_level": "E2",
+          "source_note": "Real UniFi U7 Pro lists ~$189 at store.ui.com; Cloud Gateway Ultra ~$129. If the proposal says commercial-grade but line-items eero/Orbi/Google Nest, challenge the label. Fair UniFi 3-AP + gateway equipment often $700–$1,200 before labor. https://store.ui.com/us/en/pro/collections/unifi-wifi-flagship-high-capacity/products/u7-pro?variant=U7-Pro-US"
+        },
+        {
+          "trap_name": "PoE Security Camera Bundle Forced Into Lighting/Wi-Fi Project",
+          "typical_contractor_charge_usd": 4800,
+          "actual_wholesale_cost_usd": 900,
+          "fair_installed_addon_usd": 2200,
+          "evidence_level": "E4",
+          "source_note": "Cameras are optional. A $4k–$6k Protect camera package attached to a dimmer/Wi-Fi bid is an upsell trap unless the homeowner requested surveillance. Fair 3–4 camera UniFi Protect addon often $1,800–$3,500 installed — keep as separate optional line."
+        },
+        {
+          "trap_name": "Caséta Dimmer Count Inflated With 3-Way Companion Charges",
+          "typical_contractor_charge_usd": 180,
+          "actual_wholesale_cost_usd": 20,
+          "fair_installed_addon_usd": 55,
+          "evidence_level": "E2",
+          "source_note": "Lutron Caséta PD-6WCL ~$64.95 HD; 3-way often uses a Pico remote (~$20–$35) not a second full dimmer. Charging a second $65–$120 in-wall dimmer per 3-way location is frequently unnecessary. https://www.homedepot.com/p/Lutron-Caseta-Smart-Dimmer-Switch-for-Wall-Ceiling-Lights-150W-LED-White-PD-6WCL-WH-R-PD-6WCL-WH-R/206828225"
+        }
+      ],
+      "mandatory_contract_clauses": [
+        "Must list exact UniFi SKUs (gateway, AP model, switch) and Lutron platform (Caséta vs RadioRA 3 vs Matter)",
+        "Must provide AP heat-map / placement plan and dimmer count by room including 3-way method (Pico vs companion)",
+        "Must separate optional PoE cameras / Protect NVR as optional addenda — not buried in base price",
+        "Must include controller adoption, SSID migration, and Lutron app/hub setup in labor scope",
+        "Must state warranty on labor and who owns cloud accounts / admin credentials after handoff"
+      ]
+    }
+  ]
+}
